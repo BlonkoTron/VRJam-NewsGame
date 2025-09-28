@@ -5,13 +5,17 @@ using UnityEngine.InputSystem.XR;
 
 public class Quest2RightControllerInput : MonoBehaviour
 {
-    private bool triggerPressed = false; // track ON/OFF state
-    public GameObject recordindicator;
+    public bool triggerToggled = false; // track toggle state
+    public bool newState;
+
+    public GameObject recordIndicator;
 
     void Awake()
     {
-        recordindicator.SetActive(false);
+        if (recordIndicator != null)
+            recordIndicator.SetActive(false);
     }
+
     void Update()
     {
         // Get the right-hand XR controller
@@ -21,32 +25,28 @@ public class Quest2RightControllerInput : MonoBehaviour
         // === A button ===
         if (rightHand.TryGetChildControl<ButtonControl>("primaryButton")?.wasPressedThisFrame == true)
             Debug.Log("A button pressed");
-
+        
         // === B button ===
         if (rightHand.TryGetChildControl<ButtonControl>("secondaryButton")?.wasPressedThisFrame == true)
             Debug.Log("B button pressed");
 
-        // === Trigger as ON/OFF ===
+        // === Trigger as TOGGLE ===
         var trigger = rightHand.TryGetChildControl<AxisControl>("trigger");
         if (trigger != null)
         {
-            float value = trigger.ReadValue();
-            bool isPressed = value > 0.1f;
-
-            // Detect ON
-            if (isPressed && !triggerPressed)
+            // Toggle only when the trigger is pressed this frame (not held down)
+            if (trigger.ReadValue() > 0.8f && !triggerToggled) // press threshold
             {
-                triggerPressed = true;
-                Debug.Log("Trigger ON");
-                recordindicator.SetActive(true);
+                triggerToggled = true; // prevent multiple toggles on hold
+                newState = !recordIndicator.activeSelf;
+                recordIndicator.SetActive(newState);
+                //Debug.Log("Trigger toggled: " + newState);
             }
 
-            // Detect OFF
-            if (!isPressed && triggerPressed)
+            // Reset guard once trigger is released
+            if (trigger.ReadValue() < 0.1f && triggerToggled)
             {
-                triggerPressed = false;
-                Debug.Log("Trigger OFF");
-                recordindicator.SetActive(false);
+                triggerToggled = false;
             }
         }
 
