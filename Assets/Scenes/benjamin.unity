@@ -2264,6 +2264,11 @@ MonoBehaviour:
   triggerToggled: 0
   newState: 0
   recordIndicator: {fileID: 749191873}
+  TargetFOV: 90
+  RecordCam: {fileID: 434125437}
+  ZoomFOV: 40
+  NormalFOV: 90
+  Zoomspeed: 5
 --- !u!1 &749191873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,7 +3957,7 @@ MonoBehaviour:
   player: {fileID: 1040681200}
   handheldCam: {fileID: 434125434}
   replayCam: {fileID: 188060351}
-  Quest2RightControllerInput: {fileID: 719944140}
+  ControllerButtons: {fileID: 0}
   recordDuration: 10
   block: 0
 --- !u!4 &1993760474

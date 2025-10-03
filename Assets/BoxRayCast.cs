@@ -17,7 +17,7 @@ public class BoxRayCast : MonoBehaviour
         {
             hitdistance = hit.distance;
             Debug.DrawRay(transform.position, direction * hitdistance, Color.red);
-            Debug.Log("Hit: " + hit.collider.name + " at distance " + hitdistance);
+            //Debug.Log("Hit: " + hit.collider.name + " at distance " + hitdistance);
         }
         else
         {
