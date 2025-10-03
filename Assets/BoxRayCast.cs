@@ -21,6 +21,15 @@ public class BoxRayCast : MonoBehaviour
             Debug.DrawRay(transform.position, direction * hitdistance, Color.red);
             //Debug.Log("Hit: " + hit.collider.name + " at distance " + hitdistance);
         }
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 100f))
+        {
+            if (hit.collider.CompareTag("Target"))
+            {
+                Debug.Log("NEVERGONNAGIVEYOUUP");
+            }
+        }
+
     }
 
     // Visualize the box
