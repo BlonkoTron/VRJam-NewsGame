@@ -8,12 +8,15 @@ public class BoxRayCast : MonoBehaviour
     public float hitdistance;
     public LayerMask hitLayers;     // Layerhit
 
+    public float MATH1 = 90;
+    public float MATH2 = -5;
+
     public Camera Handcam;
     public float Distancebox;
     void Update()
     {
         Vector3 direction = transform.forward;
-        Distancebox = (Handcam.fieldOfView - 40) / 5;
+        Distancebox = (Handcam.fieldOfView - MATH1) / MATH2;
         // BoxCast
         if (Physics.BoxCast(transform.position, halfExtents, direction, out RaycastHit hit, transform.rotation, maxDistance, hitLayers))
         {

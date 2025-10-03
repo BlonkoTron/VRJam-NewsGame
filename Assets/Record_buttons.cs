@@ -78,21 +78,22 @@ public class ControllerButtons : MonoBehaviour
         }
         if (stick.value.y >= 0.90f)
         {
-            TargetFOV = TargetFOV + 1;
-            if (TargetFOV >= 90)
-            {
-                TargetFOV = 90;
-            }
-            Debug.Log("UPUPUP");
-        }
-        if (stick.value.y <= -0.90f)
-        {
             TargetFOV = TargetFOV - 1;
             if (TargetFOV <= 40)
             {
                 TargetFOV = 40;
             }
             Debug.Log("DOWNDOWNDOWN");
+        }
+        if (stick.value.y <= -0.90f)
+        {
+            TargetFOV = TargetFOV + 1;
+            if (TargetFOV >= 90)
+            {
+                TargetFOV = 90;
+            }
+            Debug.Log("UPUPUP");
+            
         }
 
         RecordCam.fieldOfView = Mathf.Lerp(RecordCam.fieldOfView, TargetFOV, Time.deltaTime * Zoomspeed);

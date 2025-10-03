@@ -1090,6 +1090,8 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  MATH1: 90
+  MATH2: -5
   Handcam: {fileID: 434125437}
   Distancebox: 0
 --- !u!1 &376916277
