@@ -13,10 +13,6 @@ public class ControllerButtons : MonoBehaviour
     public Camera RecordCam;
 
     [SerializeField]
-    private float ZoomFOV;
-    [SerializeField]
-    private float NormalFOV;
-    [SerializeField]
     private float Zoomspeed;
 
     
@@ -80,14 +76,22 @@ public class ControllerButtons : MonoBehaviour
         {
             //Debug.Log($"Thumbstick: {stick.ReadValue()}");
         }
-        if (stick != null && stick.value.y >= 0.90)
+        if (stick.value.y >= 0.90f)
         {
-            TargetFOV = ZoomFOV;
+            TargetFOV = TargetFOV + 1;
+            if (TargetFOV >= 90)
+            {
+                TargetFOV = 90;
+            }
             Debug.Log("UPUPUP");
         }
-        if (stick != null && stick.value.y <= -0.90)
+        if (stick.value.y <= -0.90f)
         {
-            TargetFOV = NormalFOV;
+            TargetFOV = TargetFOV - 1;
+            if (TargetFOV <= 40)
+            {
+                TargetFOV = 40;
+            }
             Debug.Log("DOWNDOWNDOWN");
         }
 

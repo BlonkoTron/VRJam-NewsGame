@@ -2266,8 +2266,6 @@ MonoBehaviour:
   recordIndicator: {fileID: 749191873}
   TargetFOV: 90
   RecordCam: {fileID: 434125437}
-  ZoomFOV: 40
-  NormalFOV: 90
   Zoomspeed: 5
 --- !u!1 &749191873
 GameObject:
