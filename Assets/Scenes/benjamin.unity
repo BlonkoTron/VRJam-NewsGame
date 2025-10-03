@@ -1965,6 +1965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerToggled: 0
+  newState: 0
   recordIndicator: {fileID: 749191873}
 --- !u!1 &749191873
 GameObject:
@@ -2087,7 +2088,9 @@ GameObject:
   - component: {fileID: 1040681200}
   - component: {fileID: 1040681199}
   - component: {fileID: 1040681198}
-  - component: {fileID: 1040681201}
+  - component: {fileID: 1040681203}
+  - component: {fileID: 1040681202}
+  - component: {fileID: 1040681204}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -2135,14 +2138,42 @@ Transform:
   m_GameObject: {fileID: 1040681197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.508}
+  m_LocalPosition: {x: 0, y: 0.054, z: -0.497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 572353986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &1040681201
+--- !u!114 &1040681202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040681197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa7b4195685c3846be746c74f0ab2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1040681203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040681197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a26c941eb8a46f7b6d00416227ab8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_XROrigin: {fileID: 1040681199}
+  m_BodyPositionEvaluatorObject: {fileID: 0}
+  m_ConstrainedBodyManipulatorObject: {fileID: 0}
+  m_UseCharacterControllerIfExists: 1
+--- !u!143 &1040681204
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3437,6 +3468,7 @@ MonoBehaviour:
   replayCam: {fileID: 188060351}
   Quest2RightControllerInput: {fileID: 719944140}
   recordDuration: 10
+  block: 0
 --- !u!4 &1993760474
 Transform:
   m_ObjectHideFlags: 0
