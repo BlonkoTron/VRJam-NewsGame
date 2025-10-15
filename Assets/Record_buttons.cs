@@ -3,12 +3,19 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.XR;
 
-public class Quest2RightControllerInput : MonoBehaviour
+public class ControllerButtons : MonoBehaviour
 {
     public bool triggerToggled = false; // track toggle state
     public bool newState;
-
     public GameObject recordIndicator;
+    public float TargetFOV;
+
+    public Camera RecordCam;
+
+    [SerializeField]
+    private float Zoomspeed;
+
+    
 
     void Awake()
     {
@@ -16,8 +23,14 @@ public class Quest2RightControllerInput : MonoBehaviour
             recordIndicator.SetActive(false);
     }
 
+    private void Start()
+    {
+        //RecordCam = GetComponent<Camera>();
+    }
+
     void Update()
     {
+        
         // Get the right-hand XR controller
         var rightHand = InputSystem.GetDevice<UnityEngine.InputSystem.XR.XRController>();
         if (rightHand == null) return;
@@ -55,10 +68,35 @@ public class Quest2RightControllerInput : MonoBehaviour
         if (grip != null && grip.ReadValue() > 0.1f)
             Debug.Log($"Grip value: {grip.ReadValue()}");
 
+
+        
         // === Thumbstick movement ===
         var stick = rightHand.TryGetChildControl<StickControl>("thumbstick");
         if (stick != null && stick.ReadValue() != Vector2.zero)
-            Debug.Log($"Thumbstick: {stick.ReadValue()}");
+        {
+            //Debug.Log($"Thumbstick: {stick.ReadValue()}");
+        }
+        if (stick.value.y >= 0.90f)
+        {
+            TargetFOV = TargetFOV - 1;
+            if (TargetFOV <= 40)
+            {
+                TargetFOV = 40;
+            }
+            Debug.Log("DOWNDOWNDOWN");
+        }
+        if (stick.value.y <= -0.90f)
+        {
+            TargetFOV = TargetFOV + 1;
+            if (TargetFOV >= 90)
+            {
+                TargetFOV = 90;
+            }
+            Debug.Log("UPUPUP");
+            
+        }
+
+        RecordCam.fieldOfView = Mathf.Lerp(RecordCam.fieldOfView, TargetFOV, Time.deltaTime * Zoomspeed);
 
         // === Thumbstick click ===
         if (rightHand.TryGetChildControl<ButtonControl>("thumbstickClicked")?.wasPressedThisFrame == true)

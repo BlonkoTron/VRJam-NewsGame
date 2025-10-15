@@ -8,7 +8,7 @@ public class HandheldCameraReplay : MonoBehaviour
     public Transform handheldCam;  // the camera in the player's hand
     public Camera replayCam;       // the camera that outputs to a RenderTexture
 
-    public Quest2RightControllerInput Quest2RightControllerInput;
+    public ControllerButtons ControllerButtons;
 
     [Header("Settings")]
     public float recordDuration = 10f; // max recording length in seconds
@@ -40,12 +40,12 @@ public class HandheldCameraReplay : MonoBehaviour
 
     void Start()
     {
-        Quest2RightControllerInput = FindFirstObjectByType<Quest2RightControllerInput>();
+        ControllerButtons = FindFirstObjectByType<ControllerButtons>();
     }
 
     void Update()
     {
-        if (Quest2RightControllerInput.newState == true) // start recording
+        if (ControllerButtons.newState == true) // start recording
         {
             isRecording = true;
             isReplaying = false;
@@ -53,7 +53,7 @@ public class HandheldCameraReplay : MonoBehaviour
             Debug.Log("Started Recording");
         }
 
-        if (Quest2RightControllerInput.newState == false) // stop & replay
+        if (ControllerButtons.newState == false) // stop & replay
         {
             isRecording = false;
             isReplaying = true;
