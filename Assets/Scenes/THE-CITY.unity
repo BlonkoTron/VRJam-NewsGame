@@ -1192,7 +1192,7 @@ GameObject:
   - component: {fileID: 362146807}
   m_Layer: 0
   m_Name: Camera_model_square
-  m_TagString: Untagged
+  m_TagString: CameraModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2494,6 +2494,8 @@ MonoBehaviour:
   BatteryLife: 100
   BatteryDrain: 0
   camstate: 0
+  DeadBattery: {fileID: 2100000, guid: 875dab29bce92924797e7bf6723fca4f, type: 2}
+  Controlbutton: {fileID: 0}
 --- !u!1 &636980844
 GameObject:
   m_ObjectHideFlags: 0
