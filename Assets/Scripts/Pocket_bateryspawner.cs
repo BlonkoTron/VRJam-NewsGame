@@ -6,13 +6,13 @@ public class Pocket_bateryspawner : MonoBehaviour
     public Transform pocketposition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         Spawnbattery();
     }
 
     public void Spawnbattery()
     {
-        GameObject Batter = Instantiate(Battery, pocketposition.position, pocketposition.rotation);
+        Instantiate(Battery, pocketposition.position, pocketposition.rotation);
     }
 }

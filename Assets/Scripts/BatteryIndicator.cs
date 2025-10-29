@@ -18,7 +18,7 @@ public class BatteryIndicator : MonoBehaviour
     {
         initialScale = bar.localScale;
         initialPos = bar.localPosition;
-        BatteryDrains = GameObject.Find("Battery").GetComponent<Batterydrain>();
+        BatteryDrains = GameObject.FindWithTag("Battery").GetComponent<Batterydrain>();
     }
 
     void Update()
