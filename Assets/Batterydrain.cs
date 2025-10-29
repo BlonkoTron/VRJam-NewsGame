@@ -8,6 +8,8 @@ public class Batterydrain : MonoBehaviour
     public bool BatteryDrain;
     public bool camstate;
 
+    public Material DeadBattery;
+
     public ControllerButtons Controlbutton;
 
     private void Start()
@@ -42,6 +44,6 @@ public class Batterydrain : MonoBehaviour
 
     public void BatteryDead()
     {
-
+        gameObject.GetComponent<MeshRenderer>().material = DeadBattery;
     }
 }
