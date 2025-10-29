@@ -2216,6 +2216,7 @@ GameObject:
   - component: {fileID: 630789593}
   - component: {fileID: 630789592}
   - component: {fileID: 630789591}
+  - component: {fileID: 630789597}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -2478,6 +2479,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630789589}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &630789597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630789589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14997da44c0f9524ba484fc43bb67932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BatteryLife: 100
+  BatteryDrain: 0
+  camstate: 0
 --- !u!1 &636980844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,7 +2776,7 @@ Transform:
   m_GameObject: {fileID: 749191873}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7056182, y: 0.000000029802319, z: -0, w: 0.7085923}
-  m_LocalPosition: {x: -1.12, y: 0.42, z: -0.05}
+  m_LocalPosition: {x: -3.7, y: 0.77, z: -0.05}
   m_LocalScale: {x: 0.62843, y: 0.030399332, z: 0.43235016}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7903,10 +7919,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 630789597}
+        m_TargetAssemblyTypeName: Batterydrain, Assembly-CSharp
+        m_MethodName: Drain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 630789597}
+        m_TargetAssemblyTypeName: Batterydrain, Assembly-CSharp
+        m_MethodName: NoDrain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1

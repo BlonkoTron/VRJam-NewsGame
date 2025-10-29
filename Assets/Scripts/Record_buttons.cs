@@ -15,17 +15,12 @@ public class ControllerButtons : MonoBehaviour
     [SerializeField]
     private float Zoomspeed;
 
-    
-
     void Awake()
     {
         if (recordIndicator != null)
+        {
             recordIndicator.SetActive(false);
-    }
-
-    private void Start()
-    {
-        //RecordCam = GetComponent<Camera>();
+        }
     }
 
     void Update()
@@ -53,7 +48,6 @@ public class ControllerButtons : MonoBehaviour
                 triggerToggled = true; // prevent multiple toggles on hold
                 newState = !recordIndicator.activeSelf;
                 recordIndicator.SetActive(newState);
-                //Debug.Log("Trigger toggled: " + newState);
             }
 
             // Reset guard once trigger is released
@@ -72,10 +66,6 @@ public class ControllerButtons : MonoBehaviour
         
         // === Thumbstick movement ===
         var stick = rightHand.TryGetChildControl<StickControl>("thumbstick");
-        if (stick != null && stick.ReadValue() != Vector2.zero)
-        {
-            //Debug.Log($"Thumbstick: {stick.ReadValue()}");
-        }
         if (stick.value.y >= 0.90f)
         {
             TargetFOV = TargetFOV - 1;
@@ -83,7 +73,7 @@ public class ControllerButtons : MonoBehaviour
             {
                 TargetFOV = 40;
             }
-            Debug.Log("DOWNDOWNDOWN");
+            Debug.Log("Down_joystick");
         }
         if (stick.value.y <= -0.90f)
         {
@@ -92,10 +82,9 @@ public class ControllerButtons : MonoBehaviour
             {
                 TargetFOV = 90;
             }
-            Debug.Log("UPUPUP");
+            Debug.Log("Up_joystick");
             
         }
-
         RecordCam.fieldOfView = Mathf.Lerp(RecordCam.fieldOfView, TargetFOV, Time.deltaTime * Zoomspeed);
 
         // === Thumbstick click ===
