@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Target
+  - Grabbable
   layers:
   - Default
   - TransparentFX
