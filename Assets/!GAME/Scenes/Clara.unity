@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 44448497}
   m_Layer: 0
   m_Name: Target_cam_Cube1
-  m_TagString: Target
+  m_TagString: Points
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -961,9 +961,9 @@ GameObject:
   - component: {fileID: 725694896}
   - component: {fileID: 725694895}
   - component: {fileID: 725694894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target_cam_Cube1 (1)
-  m_TagString: Target
+  m_TagString: Points
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1069,9 +1069,9 @@ GameObject:
   - component: {fileID: 948866880}
   - component: {fileID: 948866879}
   - component: {fileID: 948866878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target_cam_Cube1 (2)
-  m_TagString: Target
+  m_TagString: Points
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
