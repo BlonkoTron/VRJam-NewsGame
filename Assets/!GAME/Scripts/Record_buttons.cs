@@ -53,7 +53,7 @@ public class ControllerButtons : MonoBehaviour
             {
                 recordIndicator.SetActive(true);
             }
-            if (trigger.ReadValue() < 0.5 && recordIndicator.activeSelf == true)
+            if (trigger.ReadValue() < 0.5 && recordIndicator == true)
             {
                 recordIndicator.SetActive(false);
             }
