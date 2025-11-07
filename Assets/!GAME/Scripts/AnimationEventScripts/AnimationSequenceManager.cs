@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class AnimationSequenceManager : MonoBehaviour
 {
-    public static AnimationSequenceManager m_SequenceManager;
+    public static AnimationSequenceManager Instance;
 
     [SerializeField] private List<GameObject> animationObjects;
 
     private void Awake()
     {
+
+        Instance = this;
+
         foreach (GameObject obj in animationObjects)
         {
             obj.SetActive(false);
