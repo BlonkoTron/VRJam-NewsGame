@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Target
+  - Points
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Points
   - 
   - 
   - 
