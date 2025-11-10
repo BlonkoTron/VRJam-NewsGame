@@ -48,5 +48,6 @@ public class Batterydrain : MonoBehaviour
     {
         // Assign a *new instance* of the dead material so this one is unique
         rendererInstance.material = new Material(DeadBattery);
+        Controlbutton.recordIndicator.SetActive(false);
     }
 }
