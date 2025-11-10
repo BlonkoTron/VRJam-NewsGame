@@ -4,52 +4,43 @@ public class Batterydrain : MonoBehaviour
 {
 
     public int BatteryLife;
-    
-    public bool BatteryDrain;
-    public bool camstate;
+   
 
     public Material DeadBattery;
 
     public ControllerButtons Controlbutton;
     public Pocket_bateryspawner PBattery;
+    public BatteryState Batterstate;
 
     private void Start()
     {
         Controlbutton = GameObject.Find("Right-Hand").GetComponent<ControllerButtons>();
         PBattery = GameObject.Find("Batteryspawn").GetComponent<Pocket_bateryspawner>();
+        Batterstate = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (BatteryDrain == true && Controlbutton.newState == true)
+        if ( Batterstate.battery_1 == true && Batterstate.battery_2 == true)
         {
-            BatteryLife--;
+            if (Controlbutton.newState == true)
+            {
+                BatteryLife--;
+            }
+
+            if (BatteryLife <= 0)
+            {
+                BatteryLife = 0;
+                BatteryDead();
+            }
         }
-
-        if (BatteryLife <= 0)
-        {
-            BatteryLife = 0;
-            BatteryDead();
-        }
-    }
-
-    public void Drain()
-    {
-        BatteryDrain = true;
-        Debug.Log("DRAIN");
-    }
-
-    public void NoDrain()
-    {
-        BatteryDrain = false;
-        Debug.Log("NOOOO DRAIN");
     }
 
     public void BatteryDead()
     {
-        gameObject.GetComponent<MeshRenderer>().material = DeadBattery;
-        //PBattery.Spawnbattery();
-
+        MeshRenderer renderer = GetComponent<MeshRenderer>();
+        renderer.material = new Material(DeadBattery);
     }
+
 }
