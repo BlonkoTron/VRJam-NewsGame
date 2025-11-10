@@ -16,12 +16,9 @@ public class ControllerButtons : MonoBehaviour
     [SerializeField]
     private float Zoomspeed;
 
-<<<<<<< HEAD:Assets/Scripts/Record_buttons.cs
-=======
     public static InputFeatureUsage<bool> triggerButton;
 
 
->>>>>>> main:Assets/!GAME/Scripts/Record_buttons.cs
     void Awake()
     {
         if (recordIndicator != null)
