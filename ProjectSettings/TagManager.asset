@@ -8,6 +8,8 @@ TagManager:
   - Target
   - Grabbable
   - Points
+  - Battery
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
