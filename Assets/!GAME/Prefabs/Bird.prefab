@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  minDistanceToStopMoving: 0.1
+  explodeParticlePrefab: {fileID: 1825766213508800271, guid: bc54e893b2eaf7047bd3c8529d49aad2, type: 3}
 --- !u!114 &2847923749790620407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +268,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4724133370828829338}
+        m_TargetAssemblyTypeName: BirdFollowPlayer, Assembly-CSharp
+        m_MethodName: SetHasBeenGrabbed
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
