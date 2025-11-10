@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.XR;
 
 public class ControllerButtons : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class ControllerButtons : MonoBehaviour
     [SerializeField]
     private float Zoomspeed;
 
-    
+    public static InputFeatureUsage<bool> triggerButton;
+
 
     void Awake()
     {
@@ -47,6 +49,18 @@ public class ControllerButtons : MonoBehaviour
         var trigger = rightHand.TryGetChildControl<AxisControl>("trigger");
         if (trigger != null)
         {
+            if (trigger.ReadValue() > 0.5 && recordIndicator.activeSelf == false)
+            {
+                recordIndicator.SetActive(true);
+            }
+            if (trigger.ReadValue() < 0.5 && recordIndicator == true)
+            {
+                recordIndicator.SetActive(false);
+            }
+
+
+
+            /*
             // Toggle only when the trigger is pressed this frame (not held down)
             if (trigger.ReadValue() > 0.8f && !triggerToggled) // press threshold
             {
@@ -60,7 +74,7 @@ public class ControllerButtons : MonoBehaviour
             if (trigger.ReadValue() < 0.1f && triggerToggled)
             {
                 triggerToggled = false;
-            }
+            } */
         }
 
         // === Grip ===

@@ -790,6 +790,7 @@ GameObject:
   - component: {fileID: 8179598910877443509}
   - component: {fileID: 8450303465419613302}
   - component: {fileID: 239861789898120404}
+  - component: {fileID: 5572548152515720893}
   m_Layer: 0
   m_Name: Camera_model_square
   m_TagString: Untagged
@@ -911,6 +912,21 @@ MonoBehaviour:
   MATH2: -5
   Handcam: {fileID: 1972354245946025812}
   Distancebox: 0
+--- !u!114 &5572548152515720893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018280139171195222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31bdec90bc1bad4099c1a0b39641604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 10
+  hitdistance: 0
+  currentPoints: 0
 --- !u!1 &5536251171378728808
 GameObject:
   m_ObjectHideFlags: 0
