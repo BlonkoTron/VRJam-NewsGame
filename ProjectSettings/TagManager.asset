@@ -6,8 +6,12 @@ TagManager:
   tags:
   - Anchor
   - Target
+<<<<<<< HEAD
   - CameraModel
   - Battery
+=======
+  - Points
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - Battery
   - Water
   - UI
-  - 
+  - Points
   - 
   - 
   - 
