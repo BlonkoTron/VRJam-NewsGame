@@ -6,17 +6,14 @@ TagManager:
   tags:
   - Anchor
   - Target
-<<<<<<< HEAD
-  - CameraModel
-  - Battery
-=======
   - Points
->>>>>>> main
+  - Battery
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Battery
+  - 
   - Water
   - UI
   - Points

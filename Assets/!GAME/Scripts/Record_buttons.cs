@@ -1,110 +1,119 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.XR;
-using UnityEngine.XR;
 
 public class ControllerButtons : MonoBehaviour
 {
-    public bool triggerToggled = false; // track toggle state
-    public bool newState;
+    [Header("Recording Settings")]
     public GameObject recordIndicator;
-    public float TargetFOV;
+    public Camera recordCam;
+    public float zoomSpeed = 5f;
+    public float targetFOV = 60f;
 
-    public Camera RecordCam;
+    [Header("State Tracking")]
+    public bool newState = false;
+    private bool triggerHeld = false;
 
-    [SerializeField]
-    private float Zoomspeed;
+    private XRController rightController;
 
-    public static InputFeatureUsage<bool> triggerButton;
+    private const float TriggerPressThreshold = 0.8f;
+    private const float TriggerReleaseThreshold = 0.1f;
 
-
-    void Awake()
+    private void Awake()
     {
         if (recordIndicator != null)
-        {
             recordIndicator.SetActive(false);
+
+        // Get the right-hand XR controller
+        rightController = InputSystem.GetDevice<XRController>();
+    }
+
+    private void Update()
+    {
+        if (rightController == null)
+        {
+            rightController = InputSystem.GetDevice<XRController>();
+            if (rightController == null) return;
+        }
+
+        HandleButtons();
+        HandleTriggerToggle();
+        HandleGrip();
+        HandleThumbstick();
+    }
+
+    private void HandleButtons()
+    {
+        // A Button
+        if (GetButtonPress("primaryButton"))
+            Debug.Log("A button pressed");
+
+        // B Button
+        if (GetButtonPress("secondaryButton"))
+            Debug.Log("B button pressed");
+
+        // Thumbstick Click
+        if (GetButtonPress("thumbstickClicked"))
+            Debug.Log("Thumbstick clicked");
+    }
+
+    private void HandleTriggerToggle()
+    {
+        var trigger = rightController.TryGetChildControl<AxisControl>("trigger");
+        if (trigger == null) return;
+
+        float triggerValue = trigger.ReadValue();
+
+        // When trigger is pressed beyond threshold and not already held → toggle state
+        if (triggerValue > TriggerPressThreshold && !triggerHeld)
+        {
+            triggerHeld = true;
+            newState = !newState;
+
+            if (recordIndicator != null)
+                recordIndicator.SetActive(newState);
+
+            Debug.Log($"Trigger toggled → newState = {newState}");
+        }
+
+        // Reset once trigger is released
+        if (triggerValue < TriggerReleaseThreshold && triggerHeld)
+        {
+            triggerHeld = false;
         }
     }
 
-    void Update()
+    private void HandleGrip()
     {
-        
-        // Get the right-hand XR controller
-        var rightHand = InputSystem.GetDevice<UnityEngine.InputSystem.XR.XRController>();
-        if (rightHand == null) return;
-
-        // === A button ===
-        if (rightHand.TryGetChildControl<ButtonControl>("primaryButton")?.wasPressedThisFrame == true)
-            Debug.Log("A button pressed");
-        
-        // === B button ===
-        if (rightHand.TryGetChildControl<ButtonControl>("secondaryButton")?.wasPressedThisFrame == true)
-            Debug.Log("B button pressed");
-
-        // === Trigger as TOGGLE ===
-        var trigger = rightHand.TryGetChildControl<AxisControl>("trigger");
-        if (trigger != null)
-        {
-            if (trigger.ReadValue() > 0.5 && recordIndicator.activeSelf == false)
-            {
-                recordIndicator.SetActive(true);
-            }
-            if (trigger.ReadValue() < 0.5 && recordIndicator == true)
-            {
-                recordIndicator.SetActive(false);
-            }
-
-
-
-            /*
-            // Toggle only when the trigger is pressed this frame (not held down)
-            if (trigger.ReadValue() > 0.8f && !triggerToggled) // press threshold
-            {
-                triggerToggled = true; // prevent multiple toggles on hold
-                newState = !recordIndicator.activeSelf;
-                recordIndicator.SetActive(newState);
-            }
-
-            // Reset guard once trigger is released
-            if (trigger.ReadValue() < 0.1f && triggerToggled)
-            {
-                triggerToggled = false;
-            } */
-        }
-
-        // === Grip ===
-        var grip = rightHand.TryGetChildControl<AxisControl>("grip");
+        var grip = rightController.TryGetChildControl<AxisControl>("grip");
         if (grip != null && grip.ReadValue() > 0.1f)
             Debug.Log($"Grip value: {grip.ReadValue()}");
+    }
 
+    private void HandleThumbstick()
+    {
+        var stick = rightController.TryGetChildControl<StickControl>("thumbstick");
+        if (stick == null) return;
 
-        
-        // === Thumbstick movement ===
-        var stick = rightHand.TryGetChildControl<StickControl>("thumbstick");
-        if (stick.value.y >= 0.90f)
+        if (stick.value.y >= 0.9f)
         {
-            TargetFOV = TargetFOV - 1;
-            if (TargetFOV <= 40)
-            {
-                TargetFOV = 40;
-            }
-            Debug.Log("Down_joystick");
+            targetFOV = Mathf.Max(targetFOV - 1f, 40f);
+            Debug.Log("Zooming in");
         }
-        if (stick.value.y <= -0.90f)
+        else if (stick.value.y <= -0.9f)
         {
-            TargetFOV = TargetFOV + 1;
-            if (TargetFOV >= 90)
-            {
-                TargetFOV = 90;
-            }
-            Debug.Log("Up_joystick");
-            
+            targetFOV = Mathf.Min(targetFOV + 1f, 90f);
+            Debug.Log("Zooming out");
         }
-        RecordCam.fieldOfView = Mathf.Lerp(RecordCam.fieldOfView, TargetFOV, Time.deltaTime * Zoomspeed);
 
-        // === Thumbstick click ===
-        if (rightHand.TryGetChildControl<ButtonControl>("thumbstickClicked")?.wasPressedThisFrame == true)
-            Debug.Log("Thumbstick clicked");
+        if (recordCam != null)
+            recordCam.fieldOfView = Mathf.Lerp(recordCam.fieldOfView, targetFOV, Time.deltaTime * zoomSpeed);
+    }
+
+    // --- Utility ---
+    private bool GetButtonPress(string controlName)
+    {
+        return rightController?.TryGetChildControl<ButtonControl>(controlName)?.wasPressedThisFrame == true;
     }
 }

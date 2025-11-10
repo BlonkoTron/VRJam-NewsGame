@@ -49,7 +49,7 @@ public class Batterydrain : MonoBehaviour
     public void BatteryDead()
     {
         gameObject.GetComponent<MeshRenderer>().material = DeadBattery;
-        PBattery.Spawnbattery();
+        //PBattery.Spawnbattery();
 
     }
 }
