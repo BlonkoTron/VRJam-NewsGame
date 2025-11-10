@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.Rendering;
 
 public class ControllerButtons : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class ControllerButtons : MonoBehaviour
     private bool triggerHeld = false;
 
     private XRController rightController;
+    public BatteryState Batterstate;
 
     private const float TriggerPressThreshold = 0.8f;
     private const float TriggerReleaseThreshold = 0.1f;
@@ -29,6 +31,10 @@ public class ControllerButtons : MonoBehaviour
         rightController = InputSystem.GetDevice<XRController>();
     }
 
+    public void Start()
+    {
+        Batterstate = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
+    }
     private void Update()
     {
         if (rightController == null)
@@ -71,7 +77,7 @@ public class ControllerButtons : MonoBehaviour
             triggerHeld = true;
             newState = !newState;
 
-            if (recordIndicator != null)
+            if (recordIndicator != null && Batterstate.battery_1 == true && Batterstate.battery_2 == true)
                 recordIndicator.SetActive(newState);
 
             Debug.Log($"Trigger toggled → newState = {newState}");

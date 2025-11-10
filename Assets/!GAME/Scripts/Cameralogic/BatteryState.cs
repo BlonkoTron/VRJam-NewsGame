@@ -10,30 +10,24 @@ public class BatteryState : MonoBehaviour
     {
         battery_1 = false;
         battery_1 = false;
-        Depleted = false;
     }
     public void Battery1_Enabled()
     {
-        if (Depleted == false)
-        {
-            battery_1 = true;
-        }
-        else if (Depleted == true)
-        {
-            battery_1 = false;
-        }
+        battery_1 = true;
+    }
 
+    public void Battery1_Disabled()
+    {
+        battery_1 = false;
     }
 
     public void Battery2_Enabled()
     {
-        if (Depleted == false)
-        {
-            battery_2 = true;
-        }
-        else if (Depleted == true)
-        {
-            battery_2 = false;
-        }
+        battery_2 = true;
+    }
+
+    public void Battery2_Disabled()
+    {
+        battery_1 = false;
     }
 }
