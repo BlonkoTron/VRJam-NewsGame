@@ -28,13 +28,13 @@ public class Pocket_bateryspawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlayerHand") || other.CompareTag("Controller"))
+        if (other.CompareTag("PlayerHand"))
             isInsideTrigger = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("PlayerHand") || other.CompareTag("Controller"))
+        if (other.CompareTag("PlayerHand"))
             isInsideTrigger = false;
     }
 
