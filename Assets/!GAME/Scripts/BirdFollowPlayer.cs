@@ -5,14 +5,17 @@ public class BirdFollowPlayer : MonoBehaviour
     [SerializeField] private float speed = 2;
     [SerializeField] private float minDistanceToStopMoving=0.1f;
     [SerializeField] private GameObject explodeParticlePrefab;
-    private Transform target;
+    [SerializeField] private Transform target;
 
     private bool hasBeenGrabbed=false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = FindAnyObjectByType<CharacterController>().transform;
+        if (target==null)
+        {
+            target = Camera.main.transform;
+        }
     }
     void Update()
     {
