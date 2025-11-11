@@ -39,7 +39,6 @@ public class RecordingManager : MonoBehaviour
 
     void Update()
     {
-        CheckBatteryState();
         // If controller not found (e.g., reconnected), try again
         if (!rightController.isValid)
         {
@@ -54,6 +53,7 @@ public class RecordingManager : MonoBehaviour
             // When pressed: activate object
             if (isPressed && !rightTriggerPressed)
             {
+                CheckBatteryState();
                 rightTriggerPressed = true;
                 if (recordIndicator != null && canRecord)
                     recordIndicator.SetActive(true);
@@ -79,8 +79,8 @@ public class RecordingManager : MonoBehaviour
         else
         {
             canRecord = false;
-            if (recordIndicator != null)
-                recordIndicator.SetActive(false);
+           /* if (recordIndicator != null)
+                recordIndicator.SetActive(false);*/
         }
     }
 
