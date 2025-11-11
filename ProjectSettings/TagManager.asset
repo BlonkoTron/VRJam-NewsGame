@@ -6,9 +6,10 @@ TagManager:
   tags:
   - Anchor
   - Target
+  - Grabbable
   - Points
-  - NPC
-  - Camera
+  - Battery
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Points
-  - Camera
+  - 
   - 
   - 
   - 
