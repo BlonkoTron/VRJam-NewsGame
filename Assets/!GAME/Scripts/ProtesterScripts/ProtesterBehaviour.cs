@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class ProtesterBehaviour : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    
+    public bool attack = false;
+
+    [Header("ProtesterStats")]
+    public float speed;
     [SerializeField] private float wayPointThreshold;
 
-    Transform[] waypoints;
-    private int currentWaypointIndex = 0;
-    private UnityEngine.AI.NavMeshAgent agent;
+    public Transform[] waypoints;
+    public int currentWaypointIndex = 0;
+    public UnityEngine.AI.NavMeshAgent agent;
+
+
+
 
     void Start()
     {
@@ -16,7 +23,7 @@ public class ProtesterBehaviour : MonoBehaviour
 
         agent.speed = speed;
 
-        waypoints = ProtesterWaypoints.Instance.waypoints;
+        waypoints = ProtesterHivemind.Instance.waypoints;
 
         if (waypoints.Length != 0)
         {
@@ -33,12 +40,11 @@ public class ProtesterBehaviour : MonoBehaviour
 
     void Update()
     {
-
-        WaypointCheck();
+            WaypointCheck();
 
     }
 
-    private void WaypointCheck()
+    public void WaypointCheck()
     {
         if (waypoints.Length != 0)
         {
@@ -52,7 +58,10 @@ public class ProtesterBehaviour : MonoBehaviour
         }
     }
 
-    private int GetClosestWaypointIndex()
+
+
+
+    public int GetClosestWaypointIndex()
     {
         int closestIndex = 0;
         float closestDistance = Mathf.Infinity;
