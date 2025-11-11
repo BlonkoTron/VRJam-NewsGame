@@ -16,6 +16,9 @@ public class AnimationSequenceManager : MonoBehaviour
         {
             obj.SetActive(false);
         }
+
+        StartAnimation(0);
+
     }
 
     public void StartAnimation(int sequence)
