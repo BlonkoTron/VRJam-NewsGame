@@ -10,6 +10,9 @@ TagManager:
   - Points
   - Battery
   - PlayerHand
+  - NPC
+  - Camera
+  - Lens
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Points
-  - 
+  - Lens
   - 
   - 
   - 
