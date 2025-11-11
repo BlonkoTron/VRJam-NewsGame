@@ -187,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &48460582
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 6cc2c13e4e593b243af41bff499d9640, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 062932964f895944eb534dd97467415a, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &110209533
 GameObject:
@@ -2888,7 +2888,7 @@ Transform:
   m_GameObject: {fileID: 218722390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: -4.1}
+  m_LocalPosition: {x: -0.08, y: 0, z: -5.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3027,7 +3027,7 @@ Transform:
   m_GameObject: {fileID: 290074073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.24, y: 0, z: 3.27}
+  m_LocalPosition: {x: -3.89, y: 0, z: 3.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6506,6 +6506,22 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!208 &536227109
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536227106}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 3.29, y: 4.735, z: 3.29}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.58, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &546359643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6531,7 +6547,7 @@ Transform:
   m_GameObject: {fileID: 546359643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: 0, z: -2.99}
+  m_LocalPosition: {x: 3.78, y: 0, z: -3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6589,7 +6605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6651,8 +6667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &602468442
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6702,7 +6718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6764,8 +6780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &617566007
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8740,7 +8756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8802,8 +8818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &654112636
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14619,7 +14635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14681,8 +14697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &747057210
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17347,7 +17363,7 @@ Transform:
   m_GameObject: {fileID: 879399249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.36, y: 0, z: -0.23}
+  m_LocalPosition: {x: 4.87, y: 0, z: -0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17378,7 +17394,7 @@ Transform:
   m_GameObject: {fileID: 887061223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.88, y: 0, z: 3.05}
+  m_LocalPosition: {x: 3.56, y: 0, z: 3.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17496,7 +17512,7 @@ Transform:
   m_GameObject: {fileID: 926347381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.94, y: 0, z: -0.04}
+  m_LocalPosition: {x: -4.4, y: 0, z: -0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22559,7 +22575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22621,8 +22637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &938273186
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -22678,7 +22694,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.55, y: -0.05, z: 10.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 879399250}
   - {fileID: 887061224}
@@ -24272,7 +24288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24334,8 +24350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1045944237
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -24732,7 +24748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24794,8 +24810,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1192435905
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28693,7 +28709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28755,8 +28771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1354776117
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28837,7 +28853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28899,8 +28915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1401158886
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -29061,7 +29077,7 @@ Transform:
   m_GameObject: {fileID: 1460102246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0, z: 4.65}
+  m_LocalPosition: {x: -0.09, y: 0, z: 5.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31650,7 +31666,7 @@ Transform:
   m_GameObject: {fileID: 1592103653}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67041,7 +67057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67103,8 +67119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1778771476
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -67396,7 +67412,7 @@ Transform:
   m_GameObject: {fileID: 1833029470}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.41, y: 0, z: -3.24}
+  m_LocalPosition: {x: -3.29, y: 0, z: -3.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -67412,15 +67428,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.89
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.89
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.89
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67428,7 +67444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39260292
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67489,6 +67505,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 536227108}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 536227109}
   m_SourcePrefab: {fileID: 100100000, guid: 145769f0119f81744bf3d12ccddfc43c, type: 3}
 --- !u!1001 &1856465904
 PrefabInstance:
@@ -67508,7 +67527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67570,8 +67589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1856465907
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -67850,7 +67869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67912,8 +67931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1899336710
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -68958,7 +68977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69020,8 +69039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1982825687
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -69067,7 +69086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69129,8 +69148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &1984292660
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -72721,7 +72740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -72783,8 +72802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &2067069484
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -73073,7 +73092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73135,8 +73154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &2110622085
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -73608,7 +73627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38999987
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73670,8 +73689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &2136057897
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -73832,7 +73851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 3704215846610394437, guid: c74d9a09454f42845a725bc887a77fbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73894,8 +73913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08f5bbdbc8209e4eba9835de9a4921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  wayPointThreshold: 5
+  speed: 1
+  wayPointThreshold: 0.7
 --- !u!195 &9101443068774922204
 NavMeshAgent:
   m_ObjectHideFlags: 0
