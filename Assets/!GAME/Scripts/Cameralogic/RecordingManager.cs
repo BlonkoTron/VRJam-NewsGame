@@ -1,18 +1,28 @@
-using UnityEngine;
-using UnityEngine.XR;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.XR;
 
 public class RecordingManager : MonoBehaviour
 {
     public GameObject recordIndicator;
 
+    public BatteryState batteryState;
+
     private InputDevice rightController;
     public bool rightTriggerPressed;
+    public bool canRecord;
+
+    void Awake()
+    {
+        batteryState = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
+    }
 
     void Start()
     {
         // Find the right-hand XR controller
         InitializeRightController();
+
     }
 
     void InitializeRightController()
@@ -29,6 +39,7 @@ public class RecordingManager : MonoBehaviour
 
     void Update()
     {
+        CheckBatteryState();
         // If controller not found (e.g., reconnected), try again
         if (!rightController.isValid)
         {
@@ -44,8 +55,9 @@ public class RecordingManager : MonoBehaviour
             if (isPressed && !rightTriggerPressed)
             {
                 rightTriggerPressed = true;
-                if (recordIndicator != null)
+                if (recordIndicator != null && canRecord)
                     recordIndicator.SetActive(true);
+
             }
 
             // When released: deactivate object
@@ -55,6 +67,20 @@ public class RecordingManager : MonoBehaviour
                 if (recordIndicator != null)
                     recordIndicator.SetActive(false);
             }
+        }
+    }
+
+    public void CheckBatteryState()
+    {
+        if (batteryState.battery_1 && batteryState.battery_2)
+        {
+            canRecord = true;
+        }
+        else
+        {
+            canRecord = false;
+            if (recordIndicator != null)
+                recordIndicator.SetActive(false);
         }
     }
 

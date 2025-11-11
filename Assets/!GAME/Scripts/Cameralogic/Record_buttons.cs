@@ -14,26 +14,26 @@ public class ControllerButtons : MonoBehaviour
 
     [Header("State Tracking")]
     public bool newState = false;
-    private bool triggerHeld = false;
+    //private bool triggerHeld = false;
 
     private XRController rightController;
-    public BatteryState Batterstate;
+    //public BatteryState Batterstate;
 
-    private const float TriggerPressThreshold = 0.8f;
-    private const float TriggerReleaseThreshold = 0.1f;
+    //private const float TriggerPressThreshold = 0.8f;
+    //private const float TriggerReleaseThreshold = 0.1f;
 
     private void Awake()
     {
-        if (recordIndicator != null)
+       /* if (recordIndicator != null)
             recordIndicator.SetActive(false);
 
         // Get the right-hand XR controller
-        rightController = InputSystem.GetDevice<XRController>();
+        rightController = InputSystem.GetDevice<XRController>();*/
     }
 
     public void Start()
     {
-        Batterstate = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
+       // Batterstate = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
     }
     private void Update()
     {
@@ -43,8 +43,8 @@ public class ControllerButtons : MonoBehaviour
             if (rightController == null) return;
         }
 
-        HandleButtons();
-        HandleTriggerToggle();
+        //HandleButtons();
+       // HandleTriggerToggle();
         HandleGrip();
         HandleThumbstick();
     }
@@ -64,7 +64,7 @@ public class ControllerButtons : MonoBehaviour
             Debug.Log("Thumbstick clicked");
     }
 
-    private void HandleTriggerToggle()
+    /*private void HandleTriggerToggle()
     {
         var trigger = rightController.TryGetChildControl<AxisControl>("trigger");
         if (trigger == null) return;
@@ -88,7 +88,7 @@ public class ControllerButtons : MonoBehaviour
         {
             triggerHeld = false;
         }
-    }
+    }*/
 
     private void HandleGrip()
     {
