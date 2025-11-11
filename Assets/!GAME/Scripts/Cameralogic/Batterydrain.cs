@@ -7,18 +7,20 @@ public class Batterydrain : MonoBehaviour
     public Material Fullbattery;
     public Material DeadBattery;
 
-    public ControllerButtons Controlbutton;
+   // public ControllerButtons Controlbutton;
     public Pocket_bateryspawner PBattery;
     public BatteryState Batterstate;
+    public RecordingManager recordingManager;
 
     private MeshRenderer rendererInstance;
 
     private void Start()
     {
         // Cache references
-        Controlbutton = GameObject.Find("Right-Hand").GetComponent<ControllerButtons>();
+       // Controlbutton = GameObject.Find("Right-Hand").GetComponent<ControllerButtons>();
         PBattery = GameObject.Find("Batteryspawn").GetComponent<Pocket_bateryspawner>();
         Batterstate = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
+        recordingManager = GameObject.Find("CameraVRJAMFINAL").GetComponent<RecordingManager>();
 
         // Get the MeshRenderer once
         rendererInstance = GetComponent<MeshRenderer>();
@@ -31,7 +33,7 @@ public class Batterydrain : MonoBehaviour
     {
         if (Batterstate.battery_1 && Batterstate.battery_2)
         {
-            if (Controlbutton.newState)
+            if (recordingManager.rightTriggerPressed) 
             {
                 BatteryLife--;
             }
@@ -48,6 +50,7 @@ public class Batterydrain : MonoBehaviour
     {
         // Assign a *new instance* of the dead material so this one is unique
         rendererInstance.material = new Material(DeadBattery);
-        Controlbutton.recordIndicator.SetActive(false);
+        recordingManager.canRecord = false;
+        //Controlbutton.recordIndicator.SetActive(false); //check
     }
 }
