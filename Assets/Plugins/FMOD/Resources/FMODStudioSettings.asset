@@ -261,6 +261,7 @@ MonoBehaviour:
   Banks:
   - Music
   - SFX
+  - Speech
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
