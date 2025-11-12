@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recordIndicator: {fileID: 7805758358710231823}
   batteryState: {fileID: 0}
+  lensChecker: {fileID: 0}
   rightTriggerPressed: 0
   canRecord: 0
 --- !u!114 &7566197559594774123
@@ -112,9 +113,10 @@ GameObject:
   - component: {fileID: 8250976455810462407}
   - component: {fileID: 2145302866509392575}
   - component: {fileID: 5028442668990478339}
-  m_Layer: 7
+  - component: {fileID: 6720508050736028861}
+  m_Layer: 0
   m_Name: SocketCam
-  m_TagString: Lens
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,10 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptToDisable: {fileID: 5028442668990478339}
-  minEnabledTime: 3
-  maxEnabledTime: 5
+  minEnabledTime: 10
+  maxEnabledTime: 20
   minDisableTime: 2
-  maxDisableTime: 4
+  maxDisableTime: 2
   useRandomTime: 1
   autoStart: 1
   debugMode: 1
@@ -221,6 +223,19 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &6720508050736028861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316841842430242710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0387c5addbc07a84187d926d6f0a6180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lensAttached: 0
 --- !u!1 &7601655261825704251
 GameObject:
   m_ObjectHideFlags: 0
