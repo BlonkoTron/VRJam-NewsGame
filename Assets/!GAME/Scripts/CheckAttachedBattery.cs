@@ -3,12 +3,15 @@ using UnityEngine;
 public class CheckAttachedBattery : MonoBehaviour
 {
     public GameObject currentBattery;
+    public RecordingManager recordingManager;
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Battery"))
         {
             currentBattery = other.gameObject;
+            recordingManager.CheckBatteryState();
         }
     }
 
@@ -19,6 +22,7 @@ public class CheckAttachedBattery : MonoBehaviour
             if (currentBattery == other.gameObject)
             {
                 currentBattery = null;
+                recordingManager.CheckBatteryState();
             }
         }
     }

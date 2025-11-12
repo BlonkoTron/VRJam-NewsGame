@@ -16,7 +16,11 @@ public class RecordingManager : MonoBehaviour
     public bool canRecord;
 
     public Slider batterySlider;
+    public Image batteryFillImage;
     public CheckAttachedBattery checkAttachedBattery;
+    
+    public GameObject lensWarning;
+    public GameObject batteryWarning;
 
     void Awake()
     {
@@ -28,6 +32,9 @@ public class RecordingManager : MonoBehaviour
     {
         // Find the right-hand XR controller
         InitializeRightController();
+        ActivateGameObject(lensWarning);
+        ActivateGameObject(batteryWarning);
+
     }
 
     void InitializeRightController()
@@ -51,6 +58,7 @@ public class RecordingManager : MonoBehaviour
         }
 
         UpdateBatteryLevel();
+
 
 
         // Read trigger value (float 0.0–1.0)
@@ -80,13 +88,24 @@ public class RecordingManager : MonoBehaviour
     }
     public void CheckBatteryState()
     {
-        if (batteryState.battery_1 && batteryState.battery_2 && batterySlider.value >0)
+        Debug.Log("Checking Battery State");
+        if (batteryState.battery_1 && batteryState.battery_2 && checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife > 0)
         {
             canRecord = true;
+            Debug.Log("Can Record: " + canRecord);
+            if (batteryWarning.activeSelf)
+            {
+                DeactivateGameObject(batteryWarning);
+                Debug.Log("Battery Warning Deactivated");
+            }
         }
         else
         {
             canRecord = false;
+           if (!batteryWarning.activeSelf)
+            {
+                ActivateGameObject(batteryWarning);
+            }
         }
     }
 
@@ -95,10 +114,43 @@ public class RecordingManager : MonoBehaviour
         if (batteryState.battery_1 && batteryState.battery_2)
         {
             batterySlider.value = checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife;
+
+            switch (batterySlider.value)
+            {
+                case >= 600 and <= 1000:
+                    batteryFillImage.color = Color.green;
+                    break;
+
+                case >= 300 and <= 599:
+                    batteryFillImage.color = Color.yellow;
+                    break;
+
+                case >= 1 and <= 299:
+                    batteryFillImage.color = Color.red;
+                    break;
+
+                default:
+                    batteryFillImage.color = Color.green;
+                    break;
+            }
+
         }
         else
         {
             batterySlider.value = 0;
         }
     }
+
+   public void ActivateGameObject(GameObject obj)
+    {
+        obj.SetActive(true);
+        
+    }
+
+    public void DeactivateGameObject(GameObject obj)
+    {
+        obj.SetActive(false);
+        
+    }
+
 }
