@@ -31,7 +31,7 @@ public class PointsRayCast : MonoBehaviour
         if (Physics.BoxCast(origin, boxHalfExtents, direction, out RaycastHit hitInfo, transform.rotation, maxDistance))
         {
             hitDistance = hitInfo.distance;
-            Debug.Log(hitInfo.collider.tag);
+            
 
             if (hitInfo.collider.CompareTag("Points"))
             {
