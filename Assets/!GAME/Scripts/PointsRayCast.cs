@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PointsRayCast : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PointsRayCast : MonoBehaviour
     public float currentPoints;
     public RecordingManager recordingManager;
     public GameObject recordIndicator;
+
+    public Image camLinesImage;
+   
 
     private void Awake()
     {
@@ -29,9 +33,18 @@ public class PointsRayCast : MonoBehaviour
             hitDistance = hitInfo.distance;
             Debug.Log(hitInfo.collider.tag);
 
-            if (hitInfo.collider.CompareTag("Points") && recordIndicator.activeSelf)
+            if (hitInfo.collider.CompareTag("Points"))
             {
-                currentPoints += 1;
+                camLinesImage.color= Color.green;
+
+                if (recordIndicator.activeSelf)
+                {
+                    currentPoints += 1;
+                }
+            }
+            else
+            {
+                camLinesImage.color = Color.white;
             }
         }
     }

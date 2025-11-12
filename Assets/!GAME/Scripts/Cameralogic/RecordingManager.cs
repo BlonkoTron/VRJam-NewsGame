@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class RecordingManager : MonoBehaviour
@@ -14,6 +15,9 @@ public class RecordingManager : MonoBehaviour
     public bool rightTriggerPressed;
     public bool canRecord;
 
+    public Slider batterySlider;
+    public CheckAttachedBattery checkAttachedBattery;
+
     void Awake()
     {
         batteryState = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
@@ -24,7 +28,6 @@ public class RecordingManager : MonoBehaviour
     {
         // Find the right-hand XR controller
         InitializeRightController();
-
     }
 
     void InitializeRightController()
@@ -47,6 +50,9 @@ public class RecordingManager : MonoBehaviour
             InitializeRightController();
         }
 
+        UpdateBatteryLevel();
+
+
         // Read trigger value (float 0.0–1.0)
         if (rightController.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
@@ -58,12 +64,13 @@ public class RecordingManager : MonoBehaviour
                 CheckBatteryState();
                 rightTriggerPressed = true;
                 if (recordIndicator != null && canRecord && lensChecker.lensAttached)
+                { 
                     recordIndicator.SetActive(true);
-
+                }
             }
 
             // When released: deactivate object
-            else if (!isPressed && rightTriggerPressed)
+            else if (!isPressed && rightTriggerPressed || !lensChecker.lensAttached || !canRecord)
             {
                 rightTriggerPressed = false;
                 if (recordIndicator != null)
@@ -71,19 +78,27 @@ public class RecordingManager : MonoBehaviour
             }
         }
     }
-
     public void CheckBatteryState()
     {
-        if (batteryState.battery_1 && batteryState.battery_2)
+        if (batteryState.battery_1 && batteryState.battery_2 && batterySlider.value >0)
         {
             canRecord = true;
         }
         else
         {
             canRecord = false;
-           /* if (recordIndicator != null)
-                recordIndicator.SetActive(false);*/
         }
     }
 
+    public void UpdateBatteryLevel()
+    {
+        if (batteryState.battery_1 && batteryState.battery_2)
+        {
+            batterySlider.value = checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife;
+        }
+        else
+        {
+            batterySlider.value = 0;
+        }
+    }
 }
