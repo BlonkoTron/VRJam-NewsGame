@@ -50,6 +50,9 @@ public class RecordingManager : MonoBehaviour
             InitializeRightController();
         }
 
+        UpdateBatteryLevel();
+
+
         // Read trigger value (float 0.0–1.0)
         if (rightController.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
@@ -63,12 +66,11 @@ public class RecordingManager : MonoBehaviour
                 if (recordIndicator != null && canRecord && lensChecker.lensAttached)
                 { 
                     recordIndicator.SetActive(true);
-                    UpdateBatteryLevel();
                 }
             }
 
             // When released: deactivate object
-            else if (!isPressed && rightTriggerPressed)
+            else if (!isPressed && rightTriggerPressed || !lensChecker.lensAttached || !canRecord)
             {
                 rightTriggerPressed = false;
                 if (recordIndicator != null)
@@ -78,7 +80,7 @@ public class RecordingManager : MonoBehaviour
     }
     public void CheckBatteryState()
     {
-        if (batteryState.battery_1 && batteryState.battery_2)
+        if (batteryState.battery_1 && batteryState.battery_2 && batterySlider.value >0)
         {
             canRecord = true;
         }
@@ -90,6 +92,13 @@ public class RecordingManager : MonoBehaviour
 
     public void UpdateBatteryLevel()
     {
-        batterySlider.value = checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife;
+        if (batteryState.battery_1 && batteryState.battery_2)
+        {
+            batterySlider.value = checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife;
+        }
+        else
+        {
+            batterySlider.value = 0;
+        }
     }
 }

@@ -13,6 +13,7 @@ public class Batterydrain : MonoBehaviour
     public RecordingManager recordingManager;
 
     private MeshRenderer rendererInstance;
+    public GameObject recordIndicator;
 
     private void Start()
     {
@@ -20,7 +21,8 @@ public class Batterydrain : MonoBehaviour
        // Controlbutton = GameObject.Find("Right-Hand").GetComponent<ControllerButtons>();
         PBattery = GameObject.Find("Batteryspawn").GetComponent<Pocket_bateryspawner>();
         Batterstate = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
-        recordingManager = GameObject.Find("CameraVRJAMFINAL").GetComponent<RecordingManager>();
+        recordingManager = GameObject.Find("BoxRayCast").GetComponent<RecordingManager>();
+        recordIndicator = recordingManager.recordIndicator;
 
         // Get the MeshRenderer once
         rendererInstance = GetComponent<MeshRenderer>();
@@ -33,7 +35,7 @@ public class Batterydrain : MonoBehaviour
     {
         if (Batterstate.battery_1 && Batterstate.battery_2)
         {
-            if (recordingManager.rightTriggerPressed) 
+            if (recordIndicator.activeSelf) 
             {
                 BatteryLife--;
             }
