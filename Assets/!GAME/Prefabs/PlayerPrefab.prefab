@@ -413,7 +413,7 @@ MonoBehaviour:
   rightTriggerPressed: 0
   canRecord: 0
   batterySlider: {fileID: 4052705782718720364}
-  checkAttachedBattery: {fileID: 8041847309483071053}
+  checkAttachedBattery: {fileID: 3254350962092879839}
 --- !u!114 &7566197559594774123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 7316841842430242710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1907, y: 0.1132, z: 0.0249}
+  m_LocalPosition: {x: -0.2182, y: 0.1249, z: 0.0308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -613,8 +613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptToDisable: {fileID: 5028442668990478339}
-  minEnabledTime: 20
-  maxEnabledTime: 30
+  minEnabledTime: 15
+  maxEnabledTime: 20
   minDisableTime: 2
   maxDisableTime: 2
   useRandomTime: 1
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 6364981757290118892}
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 2147483653
   m_Handedness: 0
   m_AttachTransform: {fileID: 2021961879124726354}
   m_KeepSelectedTargetValid: 1
@@ -762,8 +762,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 1000
+  m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -953,7 +953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7842973910003944292, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7338371
+      value: -0.946
       objectReference: {fileID: 0}
     - target: {fileID: 7842973910003944292, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1011,9 +1011,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 615570941761288317}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3210525496746562098, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 7584249525482145775, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8041847309483071053}
+      addedObject: {fileID: 3254350962092879839}
   m_SourcePrefab: {fileID: 100100000, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
 --- !u!114 &2617437665501078986 stripped
 MonoBehaviour:
@@ -1031,24 +1031,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3174704252062334336, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
   m_PrefabInstance: {fileID: 162634100901537471}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3373153479314912397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3210525496746562098, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
-  m_PrefabInstance: {fileID: 162634100901537471}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8041847309483071053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3373153479314912397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8cc73c9ac5b63447a798d773cf6086d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentBattery: {fileID: 0}
 --- !u!4 &4288633387620663469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4162878026781779474, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
@@ -1059,6 +1041,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6803074696643192050, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
   m_PrefabInstance: {fileID: 162634100901537471}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7710549696498901328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7584249525482145775, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+  m_PrefabInstance: {fileID: 162634100901537471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3254350962092879839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710549696498901328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cc73c9ac5b63447a798d773cf6086d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBattery: {fileID: 0}
 --- !u!1 &7805758358710231823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7931495372540364208, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
@@ -1140,7 +1140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413904728120460975, guid: 4012daeacc30c48449c7d31f3f30c27b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2426056676288499246, guid: 4012daeacc30c48449c7d31f3f30c27b, type: 3}
       propertyPath: handTransform

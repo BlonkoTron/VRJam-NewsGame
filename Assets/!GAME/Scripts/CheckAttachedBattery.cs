@@ -11,4 +11,15 @@ public class CheckAttachedBattery : MonoBehaviour
             currentBattery = other.gameObject;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Battery"))
+        {
+            if (currentBattery == other.gameObject)
+            {
+                currentBattery = null;
+            }
+        }
+    }
 }
