@@ -234,8 +234,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Sound+FMOD/VRJam_Gobsound/VRJam_Gobsound.fspro
-  sourceBankPath: Assets/Sound+FMOD/VRJam_Gobsound/Build
+  sourceProjectPath: ../../../FMOD_gamejam2025/FMOD_gamejam2025.fspro
+  sourceBankPath: ../../../FMOD_gamejam2025/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -258,7 +258,10 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks: []
+  Banks:
+  - Music
+  - SFX
+  - Speech
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
