@@ -8,6 +8,7 @@ public class RecordingManager : MonoBehaviour
     public GameObject recordIndicator;
 
     public BatteryState batteryState;
+    public LensChecker lensChecker;
 
     private InputDevice rightController;
     public bool rightTriggerPressed;
@@ -16,6 +17,7 @@ public class RecordingManager : MonoBehaviour
     void Awake()
     {
         batteryState = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
+        lensChecker = GameObject.Find("SocketCam").GetComponent<LensChecker>();
     }
 
     void Start()
@@ -55,7 +57,7 @@ public class RecordingManager : MonoBehaviour
             {
                 CheckBatteryState();
                 rightTriggerPressed = true;
-                if (recordIndicator != null && canRecord)
+                if (recordIndicator != null && canRecord && lensChecker.lensAttached)
                     recordIndicator.SetActive(true);
 
             }
