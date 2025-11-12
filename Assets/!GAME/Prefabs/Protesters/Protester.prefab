@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.73276967, y: -0.63095534, z: -0.18324536, w: -0.1771022}
   m_LocalPosition: {x: -0.00262, y: 0.00022, z: -0.00048}
-  m_LocalScale: {x: 0.0005, y: 0.004, z: -0.0005}
+  m_LocalScale: {x: 0.0005, y: 0.004, z: 0.0005}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2242075087571363783}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5794169036135324767}
   - component: {fileID: 895556337372607647}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SignHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 6255372218932488382}
   - component: {fileID: 5455325794692971288}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SignFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a41ffd15d8ca0e14da440d880bf59966, type: 2}
+  - {fileID: 2100000, guid: 088c1f024fb40954d8eb5d91a2eeb921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -740,6 +740,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3918313099460641299}
   m_SourcePrefab: {fileID: 100100000, guid: 240d802a4c703ec45ba48ac259095537, type: 3}
+--- !u!1 &35590012244330533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8486553943350905860, guid: 240d802a4c703ec45ba48ac259095537, type: 3}
+  m_PrefabInstance: {fileID: 8482594994790532129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &662867493401336672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8974197745433190209, guid: 240d802a4c703ec45ba48ac259095537, type: 3}
@@ -785,6 +790,7 @@ MonoBehaviour:
   waypoints: []
   currentWaypointIndex: 0
   agent: {fileID: 0}
+  body: {fileID: 35590012244330533}
 --- !u!4 &1250944117752272785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7269940338683417520, guid: 240d802a4c703ec45ba48ac259095537, type: 3}

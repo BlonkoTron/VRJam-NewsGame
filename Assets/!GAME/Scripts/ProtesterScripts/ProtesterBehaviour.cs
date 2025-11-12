@@ -9,11 +9,12 @@ public class ProtesterBehaviour : MonoBehaviour
     public float speed;
     [SerializeField] private float wayPointThreshold;
 
+    [Header("Waypoint")]
     public Transform[] waypoints;
     public int currentWaypointIndex = 0;
     public UnityEngine.AI.NavMeshAgent agent;
 
-
+    [SerializeField] private GameObject body;
 
 
     void Start()
@@ -24,6 +25,8 @@ public class ProtesterBehaviour : MonoBehaviour
         agent.speed = speed;
 
         waypoints = ProtesterHivemind.Instance.waypoints;
+
+        RandomizeApperance();
 
         if (waypoints.Length != 0)
         {
@@ -80,4 +83,18 @@ public class ProtesterBehaviour : MonoBehaviour
 
         return closestIndex;
     }
+
+    public void RandomizeApperance()
+    {
+        if (ProtesterHivemind.Instance != null && body != null) {
+
+            if (ProtesterHivemind.Instance.materials.Length > 0)
+            {
+                int randomMat = Random.Range(0, ProtesterHivemind.Instance.materials.Length);
+
+                body.GetComponent<Renderer>().material = ProtesterHivemind.Instance.materials[randomMat];
+            }
+        }
+    }
+
 }
