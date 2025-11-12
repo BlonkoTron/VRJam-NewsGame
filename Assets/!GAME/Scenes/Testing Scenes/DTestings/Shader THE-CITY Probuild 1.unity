@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 86e634dbda7492f4c9479db3ce131eb9, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -85528,7 +85528,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 38708093}
+  m_Mesh: {fileID: 435019611}
 --- !u!33 &1960496956
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -89545,6 +89545,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 483699103885459629, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
+      propertyPath: m_Name
+      value: TheHost
+      objectReference: {fileID: 0}
     - target: {fileID: 5842334916317485233, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19870365

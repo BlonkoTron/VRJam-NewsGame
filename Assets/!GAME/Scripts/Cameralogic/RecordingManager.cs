@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class RecordingManager : MonoBehaviour
@@ -8,21 +9,25 @@ public class RecordingManager : MonoBehaviour
     public GameObject recordIndicator;
 
     public BatteryState batteryState;
+    public LensChecker lensChecker;
 
     private InputDevice rightController;
     public bool rightTriggerPressed;
     public bool canRecord;
 
+    public Slider batterySlider;
+    public CheckAttachedBattery checkAttachedBattery;
+
     void Awake()
     {
         batteryState = GameObject.Find("Right-Hand").GetComponent<BatteryState>();
+        lensChecker = GameObject.Find("SocketCam").GetComponent<LensChecker>();
     }
 
     void Start()
     {
         // Find the right-hand XR controller
         InitializeRightController();
-
     }
 
     void InitializeRightController()
@@ -55,9 +60,11 @@ public class RecordingManager : MonoBehaviour
             {
                 CheckBatteryState();
                 rightTriggerPressed = true;
-                if (recordIndicator != null && canRecord)
+                if (recordIndicator != null && canRecord && lensChecker.lensAttached)
+                { 
                     recordIndicator.SetActive(true);
-
+                    UpdateBatteryLevel();
+                }
             }
 
             // When released: deactivate object
@@ -69,7 +76,6 @@ public class RecordingManager : MonoBehaviour
             }
         }
     }
-
     public void CheckBatteryState()
     {
         if (batteryState.battery_1 && batteryState.battery_2)
@@ -79,9 +85,11 @@ public class RecordingManager : MonoBehaviour
         else
         {
             canRecord = false;
-           /* if (recordIndicator != null)
-                recordIndicator.SetActive(false);*/
         }
     }
 
+    public void UpdateBatteryLevel()
+    {
+        batterySlider.value = checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife;
+    }
 }
