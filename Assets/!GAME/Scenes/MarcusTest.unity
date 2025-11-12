@@ -5148,6 +5148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHand
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27385acac14fdf24b8e736fa93b0d847, type: 3}
+      propertyPath: m_TagString
+      value: Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 1410640795416684745, guid: 27385acac14fdf24b8e736fa93b0d847, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.032586124

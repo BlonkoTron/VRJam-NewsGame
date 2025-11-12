@@ -4,7 +4,7 @@ public class AttackingProtester : ProtesterBehaviour
 {
 
     [Header("Insert the Handheld Camera GameObject From the Scene HERE")]
-    [SerializeField] private Transform camTransform;
+    private Transform camTransform;
     [SerializeField] private float distanceToCam;
     [SerializeField] private float attackingSpd;
 
@@ -12,6 +12,8 @@ public class AttackingProtester : ProtesterBehaviour
     private void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+        camTransform = GameObject.Find("Right-Hand").transform;
 
         waypoints = ProtesterHivemind.Instance.attackWaypoints;
 
