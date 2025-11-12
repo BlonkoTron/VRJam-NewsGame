@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackingProtester : ProtesterBehaviour
 {
@@ -8,17 +9,17 @@ public class AttackingProtester : ProtesterBehaviour
     [SerializeField] private float distanceToCam;
     [SerializeField] private float attackingSpd;
 
-
     private void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
-        camTransform = GameObject.Find("Right-Hand").transform;
+        camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
         waypoints = ProtesterHivemind.Instance.attackWaypoints;
 
         agent.speed = speed;
 
+        RandomizeApperance();
 
         if (waypoints.Length != 0)
         {
@@ -51,13 +52,13 @@ public class AttackingProtester : ProtesterBehaviour
     private void AttackCam()
     {
 
-        Debug.Log("AAAAAA");
-
         agent.speed = attackingSpd;
         if (!agent.pathPending && Vector3.Distance(transform.position, camTransform.position) <= distanceToCam)
         {
             agent.SetDestination(new Vector3(camTransform.position.x, transform.position.y, camTransform.position.z));
         }
+            
+        
 
     }
 }
