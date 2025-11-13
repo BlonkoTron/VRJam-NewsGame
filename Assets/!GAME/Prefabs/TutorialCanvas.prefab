@@ -194,7 +194,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &339175188120430944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,3 +228,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   video: {fileID: 288323779113968552}
+  teleportDestination: {fileID: 0}
