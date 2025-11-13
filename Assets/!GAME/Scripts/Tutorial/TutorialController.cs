@@ -36,6 +36,7 @@ public class TutorialController : MonoBehaviour
 
     private void OnVideoEnd(VideoPlayer vp)
     {
+        Debug.Log("video ended, now teleport player");
         OnTutorialEnded.Invoke();
         TransitionController.Instance.FadeOut();
         TransitionController.Instance.OnFadeOutEnd.AddListener(TeleportPlayer);
@@ -46,5 +47,6 @@ public class TutorialController : MonoBehaviour
         TransitionController.Instance.OnFadeOutEnd.RemoveListener(TeleportPlayer);
         GameObject player = FindAnyObjectByType<CharacterController>().gameObject;
         player.transform.position = teleportDestination.position;
+        TransitionController.Instance.FadeIn(); 
     }
 }
