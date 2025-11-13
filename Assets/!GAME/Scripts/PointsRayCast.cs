@@ -37,9 +37,9 @@ public class PointsRayCast : MonoBehaviour
             {
                 camLinesImage.color= Color.green;
 
-                if (recordIndicator.activeSelf)
+                if (recordIndicator.activeSelf && PointManager.Instance != null)
                 {
-                    currentPoints += 1;
+                    PointManager.Instance.totalPoints += 1;
                 }
             }
             else
