@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{69a1c424-9d18-44a8-b46e-06a30aa21061}">
+		<property name="assetPath">
+			<value>Newsguy_3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.591354166666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{445a91a4-616e-4064-9ef9-50b601d40aed}</destination>
+		</relationship>
+	</object>
+</objects>
