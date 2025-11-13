@@ -31,15 +31,15 @@ public class PointsRayCast : MonoBehaviour
         if (Physics.BoxCast(origin, boxHalfExtents, direction, out RaycastHit hitInfo, transform.rotation, maxDistance))
         {
             hitDistance = hitInfo.distance;
-            Debug.Log(hitInfo.collider.tag);
+            
 
             if (hitInfo.collider.CompareTag("Points"))
             {
                 camLinesImage.color= Color.green;
 
-                if (recordIndicator.activeSelf)
+                if (recordIndicator.activeSelf && PointManager.Instance != null)
                 {
-                    currentPoints += 1;
+                    PointManager.Instance.totalPoints += 1;
                 }
             }
             else
