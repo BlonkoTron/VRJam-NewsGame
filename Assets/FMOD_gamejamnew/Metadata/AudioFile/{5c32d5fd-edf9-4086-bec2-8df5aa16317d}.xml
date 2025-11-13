@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{5c32d5fd-edf9-4086-bec2-8df5aa16317d}">
 		<property name="assetPath">
-			<value>camerapop.wav</value>
+			<value>sfx/camerapop.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

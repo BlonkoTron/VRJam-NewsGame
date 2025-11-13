@@ -260,6 +260,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Music
+  - ouch
   - SFX
   - Voices
   BanksToLoad: []

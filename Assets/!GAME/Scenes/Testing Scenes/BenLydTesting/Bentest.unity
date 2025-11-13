@@ -61896,6 +61896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361367091}
   - component: {fileID: 1361367092}
+  - component: {fileID: 1361367093}
   m_Layer: 0
   m_Name: Randomaudio
   m_TagString: Untagged
@@ -61965,6 +61966,86 @@ MonoBehaviour:
       Data3: -163654784
       Data4: -937697437
     Path: event:/SFX/Lens
+--- !u!114 &1361367093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361367090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312f5aed0e298648aea3b881974eb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLines:
+  - Guid:
+      Data1: 950349752
+      Data2: 1209016819
+      Data3: -1291064387
+      Data4: 1134775195
+    Path: event:/hits/Ouch_1
+  - Guid:
+      Data1: -674929573
+      Data2: 1217391300
+      Data3: -788869759
+      Data4: -109975889
+    Path: event:/hits/Ouch_2
+  - Guid:
+      Data1: 2116461318
+      Data2: 1217182360
+      Data3: -1019740006
+      Data4: -1322145178
+    Path: event:/hits/Ouch_3
+  - Guid:
+      Data1: -1627877110
+      Data2: 1137195584
+      Data3: 1752433072
+      Data4: 1457109708
+    Path: event:/hits/Ouch_4
+  - Guid:
+      Data1: -1353244318
+      Data2: 1104692005
+      Data3: 1128659346
+      Data4: 1737823492
+    Path: event:/hits/Ouch_5
+  - Guid:
+      Data1: -1462599239
+      Data2: 1223326618
+      Data3: 1284939152
+      Data4: -2142308144
+    Path: event:/hits/Ouch_6
+  - Guid:
+      Data1: -2103005754
+      Data2: 1275586051
+      Data3: 960666758
+      Data4: -1208368152
+    Path: event:/hits/Ouch_7
+  - Guid:
+      Data1: -1451702196
+      Data2: 1268114671
+      Data3: -667688320
+      Data4: 340207985
+    Path: event:/hits/Ouch_8
+  - Guid:
+      Data1: 1319618757
+      Data2: 1249899398
+      Data3: -830878533
+      Data4: 1567051134
+    Path: event:/hits/Ouch_9
+  - Guid:
+      Data1: -561203673
+      Data2: 1184883087
+      Data3: 1352828082
+      Data4: -95955630
+    Path: event:/hits/Ouch_10
+  canhit:
+    Guid:
+      Data1: 660255989
+      Data2: 1341380304
+      Data3: -1488901221
+      Data4: 1403068482
+    Path: event:/hits/Canhit
 --- !u!1 &1367010183
 GameObject:
   m_ObjectHideFlags: 0
