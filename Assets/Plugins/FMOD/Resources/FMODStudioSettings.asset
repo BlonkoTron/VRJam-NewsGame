@@ -234,8 +234,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../FMOD_gamejam2025/FMOD_gamejam2025.fspro
-  sourceBankPath: ../../../FMOD_gamejam2025/Build
+  sourceProjectPath: FMOD_gamejamnew/FMOD_gamejamnew.fspro
+  sourceBankPath: FMOD_gamejamnew/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
