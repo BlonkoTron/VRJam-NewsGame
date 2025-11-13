@@ -47,5 +47,6 @@ public class TutorialController : MonoBehaviour
         TransitionController.Instance.OnFadeOutEnd.RemoveListener(TeleportPlayer);
         GameObject player = FindAnyObjectByType<CharacterController>().gameObject;
         player.transform.position = teleportDestination.position;
+        TransitionController.Instance.FadeIn(); 
     }
 }
