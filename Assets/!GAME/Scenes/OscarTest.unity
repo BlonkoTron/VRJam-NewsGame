@@ -14353,7 +14353,6 @@ MonoBehaviour:
   zoomSpeed: 5
   targetFOV: 60
   newState: 0
-  Batterstate: {fileID: 0}
 --- !u!1001 &724048537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72501,7 +72500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2227593437864761657, guid: 4cb0ca67a19daad478a888b07a9cf11f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.77
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 2227593437864761657, guid: 4cb0ca67a19daad478a888b07a9cf11f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -72509,7 +72508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2227593437864761657, guid: 4cb0ca67a19daad478a888b07a9cf11f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.02
+      value: -2.91
       objectReference: {fileID: 0}
     - target: {fileID: 2227593437864761657, guid: 4cb0ca67a19daad478a888b07a9cf11f, type: 3}
       propertyPath: m_LocalRotation.w
