@@ -13,16 +13,16 @@ public class Ranksystem : MonoBehaviour
     public VideoClip E_Rank;
     public VideoClip F_Rank;
 
-    public PointManager Pointmanager;
+    public PointManager Pointmanagers;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Pointmanager = GameObject.Find("Pointssystem").GetComponent<PointManager>();
+        Pointmanagers = GameObject.Find("Pointssystem").GetComponent<PointManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Pointmanagers.totalPoints = 0;
     }
 }
