@@ -14,12 +14,16 @@ public class PointsRayCast : MonoBehaviour
     public GameObject recordIndicator;
 
     public Image camLinesImage;
-   
+    [SerializeField] private GameObject particles;
+    private ParticleSystem particleSystem;
+
+    private Color gold = new Color(255f, 255f, 0f);
 
     private void Awake()
     {
         // Fix: assign to the field, not a new local variable
         recordingManager = GetComponent<RecordingManager>();
+        particleSystem = particles.GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -44,7 +48,7 @@ public class PointsRayCast : MonoBehaviour
             }
             else if (hitInfo.collider.CompareTag("OneTimePoints"))
             {
-                camLinesImage.color = Color.magenta;
+                camLinesImage.color = gold;
                
                 if (recordIndicator.activeSelf && PointManager.Instance != null)
                 {
@@ -72,6 +76,7 @@ public class PointsRayCast : MonoBehaviour
     {
             obj.tag = "Untagged";
             PointManager.Instance.totalPoints += 2500;
+            particleSystem.Play();
     }
 }
 
