@@ -234,8 +234,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD_gamejamnew/FMOD_gamejamnew.fspro
-  sourceBankPath: FMOD_gamejamnew/Build
+  sourceProjectPath: Assets/FMOD_gamejamnew/FMOD_gamejamnew.fspro
+  sourceBankPath: Assets/FMOD_gamejamnew/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -261,7 +261,7 @@ MonoBehaviour:
   Banks:
   - Music
   - SFX
-  - Speech
+  - Voices
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
