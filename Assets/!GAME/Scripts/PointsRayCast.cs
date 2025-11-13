@@ -39,7 +39,16 @@ public class PointsRayCast : MonoBehaviour
 
                 if (recordIndicator.activeSelf && PointManager.Instance != null)
                 {
-                    PointManager.Instance.totalPoints += 1;
+                        PointManager.Instance.totalPoints += 1;
+                }
+            }
+            else if (hitInfo.collider.CompareTag("OneTimePoints"))
+            {
+                camLinesImage.color = Color.magenta;
+               
+                if (recordIndicator.activeSelf && PointManager.Instance != null)
+                {
+                        TargetHit(hitInfo.collider.gameObject);
                 }
             }
             else
@@ -57,6 +66,12 @@ public class PointsRayCast : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.forward * hitDistance, boxHalfExtents * 2);
+    }
+
+    void TargetHit(GameObject obj)
+    {
+            obj.tag = "Untagged";
+            PointManager.Instance.totalPoints += 2500;
     }
 }
 

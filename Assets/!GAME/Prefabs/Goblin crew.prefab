@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5075949101234753710}
+  - component: {fileID: 476148065142434970}
   m_Layer: 0
   m_Name: Goblin crew
   m_TagString: OneTimePoints
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898673324221522437}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7003195, z: -0, w: 0.71382964}
+  m_LocalRotation: {x: 0, y: 0.7003177, z: 0, w: 0.71383137}
   m_LocalPosition: {x: -1.86, y: -0.019666195, z: 23.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35,6 +36,27 @@ Transform:
   - {fileID: 1150061011954433587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 88.905, z: 0}
+--- !u!65 &476148065142434970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898673324221522437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6067123, y: 1, z: 1.1021119}
+  m_Center: {x: -0.68448323, y: 0, z: -0.1438905}
 --- !u!1001 &612330226859153880
 PrefabInstance:
   m_ObjectHideFlags: 0
