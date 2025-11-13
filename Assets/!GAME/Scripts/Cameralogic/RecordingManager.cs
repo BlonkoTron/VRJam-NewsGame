@@ -10,6 +10,7 @@ public class RecordingManager : MonoBehaviour
 
     public BatteryState batteryState;
     public LensChecker lensChecker;
+    public Haptics haptics;
 
     private InputDevice rightController;
     public bool rightTriggerPressed;
@@ -144,7 +145,8 @@ public class RecordingManager : MonoBehaviour
    public void ActivateGameObject(GameObject obj)
     {
         obj.SetActive(true);
-        
+        haptics.SendHaptic();
+
     }
 
     public void DeactivateGameObject(GameObject obj)
