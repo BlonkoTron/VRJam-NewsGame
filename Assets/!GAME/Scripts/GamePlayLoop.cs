@@ -52,7 +52,7 @@ public class GamePlayLoop : MonoBehaviour
     private float lastPointsValue = 0f;
     private bool pointsSoundPlayed = false;
 
-    
+    private bool NextSequenceStarted = false;
     
     
     private bool animationTriggered = false;
@@ -63,18 +63,6 @@ public class GamePlayLoop : MonoBehaviour
 
     void Start()
     {
-        // Enable all objects to monitor at start
-        if (objectsToMonitor != null && objectsToMonitor.Length > 0)
-        {
-            foreach (GameObject obj in objectsToMonitor)
-            {
-                if (obj != null)
-                {
-                    obj.SetActive(true);
-                }
-            }
-        }
-        
         StartCoroutine(startSequenceCoroutine());
     }
 
@@ -92,8 +80,8 @@ public class GamePlayLoop : MonoBehaviour
         float currentPoints = animator.GetFloat(pointsParameterName);
         if (!pointsSoundPlayed && currentPoints > 0f && lastPointsValue == 0f)
         {
-            // Enable all objects to monitor
-            if (objectsToMonitor != null && objectsToMonitor.Length > 0)
+            // Enable all objects to monitor and set NextSequenceStarted once
+            if (!NextSequenceStarted && objectsToMonitor != null && objectsToMonitor.Length > 0)
             {
                 foreach (GameObject obj in objectsToMonitor)
                 {
@@ -102,6 +90,7 @@ public class GamePlayLoop : MonoBehaviour
                         obj.SetActive(true);
                     }
                 }
+                NextSequenceStarted = true;
             }
             
             Audiomanager.instance.PlaySound(PointsSoundEvent, transform.position);
@@ -122,7 +111,7 @@ public class GamePlayLoop : MonoBehaviour
             lastAllDisabledState = allDisabled;
         }
 
-        if (!animationTriggered && AreAllObjectsDisabled())
+        if (!animationTriggered && AreAllObjectsDisabled() && NextSequenceStarted)
         {
             animationTriggered = true;
             StartCoroutine(AnimationTimerCoroutine());
