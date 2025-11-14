@@ -63,18 +63,6 @@ public class GamePlayLoop : MonoBehaviour
 
     void Start()
     {
-        // Enable all objects to monitor at start
-        if (objectsToMonitor != null && objectsToMonitor.Length > 0)
-        {
-            foreach (GameObject obj in objectsToMonitor)
-            {
-                if (obj != null)
-                {
-                    obj.SetActive(true);
-                }
-            }
-        }
-        
         StartCoroutine(startSequenceCoroutine());
     }
 
