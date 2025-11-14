@@ -11,6 +11,7 @@ public class TutorialController : MonoBehaviour
     public UnityEvent OnTutorialEnded;
 
     [SerializeField] private VideoPlayer video;
+    [SerializeField] private GameObject playButton;
 
     [SerializeField] private Transform teleportDestination;
 
@@ -25,18 +26,16 @@ public class TutorialController : MonoBehaviour
             Instance = this;
         }
     }
-
-    private void Start()
+    public void Startvideo()
     {
+        video.Play();
         video.loopPointReached += OnVideoEnd;
-    }
-    private void OnDestroy()
-    {
-        video.loopPointReached -= OnVideoEnd;
+        playButton.SetActive(false);
     }
 
     private void OnVideoEnd(VideoPlayer vp)
     {
+        video.loopPointReached -= OnVideoEnd;
         Debug.Log("video ended, now fade out and teleport player");
         OnTutorialEnded.Invoke();
         TransitionController.Instance.FadeOut();
