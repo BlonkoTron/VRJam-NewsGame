@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class BirdFollowPlayer : MonoBehaviour
 {
@@ -6,6 +9,12 @@ public class BirdFollowPlayer : MonoBehaviour
     [SerializeField] private float minDistanceToStopMoving=0.1f;
     [SerializeField] private GameObject explodeParticlePrefab;
     [SerializeField] private Transform target;
+
+    private EventInstance Birdespawn;
+    private EventInstance Birddead;
+
+    [SerializeField] private EventReference Birderspawn_1;
+    [SerializeField] private EventReference Birderdead_2;
 
     private bool hasBeenGrabbed=false;
     private Rigidbody rb;
@@ -18,6 +27,7 @@ public class BirdFollowPlayer : MonoBehaviour
         {
             target = Camera.main.transform;
         }
+        Birdespawn = Audiomanager.instance.PlaySound(Birderspawn_1, transform.position);
     }
     void Update()
     {
@@ -41,6 +51,8 @@ public class BirdFollowPlayer : MonoBehaviour
         {
             Instantiate(explodeParticlePrefab,transform.position,Quaternion.identity);
             Destroy(this.gameObject);
+            Birddead = Audiomanager.instance.PlaySound(Birderdead_2, transform.position);
+
         }
         if (collision.gameObject.CompareTag("Grabbable"))
         {
