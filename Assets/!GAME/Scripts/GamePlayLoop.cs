@@ -9,10 +9,14 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] public string animationParameterName = "AnimationComplete"; // Bool parameter to check
     [SerializeField] public float animationDuration = 5f; // Duration in seconds before setting AnimationComplete
     [SerializeField] public float secondTimerDuration = 17.5f; // Duration for second timer
+    [SerializeField] public float thirdTimerDuration = 34.5f;
     [SerializeField] public GameObject objectToDisable;
     [SerializeField] public GameObject objectToEnable;
     [SerializeField] public GameObject BirdAnimationOff;
     [SerializeField] public GameObject HouseAnimationON;
+    
+    [SerializeField] public GameObject Door;
+    [SerializeField] public GameObject KajiuAnimation;
     
     private bool animationTriggered = false;
     private bool checkingForCompletion = false;
@@ -87,14 +91,24 @@ public class GamePlayLoop : MonoBehaviour
         
         BulidingAnimationOn();
         Debug.Log("<color=yellow>Second timer finished, toggling objects</color>");
+
+        yield return new WaitForSeconds(thirdTimerDuration);
+        Kajiu();
         
+    }
+
+    private void Kajiu()
+    {
+        HouseAnimationON.SetActive(false);
+        Door.SetActive(false);
+        KajiuAnimation.SetActive(true);
     }
 
     private void BulidingAnimationOn()
     {
         if (objectToDisable != null)
         {
-            objectToDisable.SetActive(true);
+            HouseAnimationON.SetActive(true);
             objectToEnable.SetActive(false);
         }
     }
