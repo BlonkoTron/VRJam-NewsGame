@@ -34,6 +34,7 @@ public class AnimationToRagdoll : MonoBehaviour
 
         if (!bIsRagdoll && collision.gameObject.tag == "Grabbable")
         {
+            Ouches.Soundactivate = true;
             ToggleRagdoll(false);
             StartCoroutine(Despawn());
 
@@ -43,7 +44,7 @@ public class AnimationToRagdoll : MonoBehaviour
     private void ToggleRagdoll(bool bisAnimating)
     {
         bIsRagdoll = !bisAnimating;
-        Ouches.Soundactivate = true;
+        
         myCollider.enabled = bisAnimating;
         foreach (Rigidbody ragdollBone in rigidbodies)
         {
