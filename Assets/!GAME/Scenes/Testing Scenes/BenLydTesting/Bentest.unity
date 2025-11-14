@@ -62464,25 +62464,77 @@ MonoBehaviour:
   - rankName: S_rank
     pointThreshold: 700
     videoClip: {fileID: 32900000, guid: 3d724e375f86fcb42b8957884580809b, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - rankName: A_rank
     pointThreshold: 600
     videoClip: {fileID: 32900000, guid: 7ab9e7421eb0a0f47b7b2d34e28aa554, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - rankName: B_rank
     pointThreshold: 500
     videoClip: {fileID: 32900000, guid: cb64271a825f44b4896681d677e3a110, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - rankName: C_rank
     pointThreshold: 400
     videoClip: {fileID: 32900000, guid: 23b9ccd4cc55ddf489d74a13154e1dd8, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - rankName: D_rank
     pointThreshold: 300
     videoClip: {fileID: 32900000, guid: 2774bf6c30ab82042acd4452cfea6ac7, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - rankName: E_rank
     pointThreshold: 200
     videoClip: {fileID: 32900000, guid: a180bd0986a22d243be7053702917aca, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
   - rankName: F_rank
     pointThreshold: 100
     videoClip: {fileID: 32900000, guid: e768bfb59f2687c498db7e984889d23f, type: 3}
+    fmodEvent:
+      Guid:
+        Data1: -39901835
+        Data2: 1098706200
+        Data3: -584517755
+        Data4: -1333912241
+      Path: event:/Evilguy/Evilguy_1
   pointManager: {fileID: 0}
+  useManualPoints: 0
+  manualPoints: 0
+  test: 0
 --- !u!1 &1378954463
 GameObject:
   m_ObjectHideFlags: 0

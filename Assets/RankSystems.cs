@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Video;
+using FMODUnity;
+using FMOD.Studio;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -8,6 +10,12 @@ public class RankEntry
     public string rankName;
     public float pointThreshold;
     public VideoClip videoClip;
+
+    [Header("FMOD Audio Event")]
+    public EventReference fmodEvent;   // Updated from [EventRef] string
+
+    [HideInInspector]
+    public EventInstance fmodEventInstance;
 }
 
 public class RankSystems : MonoBehaviour
@@ -17,17 +25,16 @@ public class RankSystems : MonoBehaviour
     [Header("Rank Settings")]
     public List<RankEntry> ranks = new List<RankEntry>();
 
-    [Header("Point Manager (Real Game Points)")]
+    [Header("Point Manager")]
     public PointManager pointManager;
 
     [Header("Manual Testing")]
     public bool useManualPoints = false;
     public float manualPoints = 0f;
 
-    [Header("Trigger")]
     public bool test;
 
-    private VideoClip finalClip;
+    private RankEntry finalRank = null;
     private bool hasPlayed = false;
 
     void Start()
@@ -35,7 +42,17 @@ public class RankSystems : MonoBehaviour
         if (pointManager == null)
             pointManager = GameObject.Find("VideoPlayer").GetComponent<PointManager>();
 
+        // Sort ranks in ascending order by threshold
         ranks.Sort((a, b) => a.pointThreshold.CompareTo(b.pointThreshold));
+
+        // Create FMOD instances for all ranks
+        foreach (var rank in ranks)
+        {
+            if (!rank.fmodEvent.IsNull)
+            {
+                rank.fmodEventInstance = RuntimeManager.CreateInstance(rank.fmodEvent);
+            }
+        }
 
         videoPlayer.loopPointReached += OnVideoFinished;
     }
@@ -54,34 +71,44 @@ public class RankSystems : MonoBehaviour
     {
         float points = useManualPoints ? manualPoints : pointManager.totalPoints;
 
-        finalClip = ranks[0].videoClip;
+        finalRank = ranks[0];
 
         foreach (var r in ranks)
         {
             if (points >= r.pointThreshold)
-                finalClip = r.videoClip;
+                finalRank = r;
         }
-
-        Debug.Log("Selected Rank Video = " + finalClip.name + " (points = " + points + ")");
     }
 
     public void PlayFinalRank()
     {
+        if (finalRank == null) return;
         hasPlayed = true;
 
+        // --- PLAY VIDEO ---
         videoPlayer.Stop();
-        videoPlayer.clip = finalClip;
-        videoPlayer.playOnAwake = false;
+        videoPlayer.clip = finalRank.videoClip;
         videoPlayer.isLooping = false;
-
         videoPlayer.Play();
+
+        // --- PLAY FMOD AUDIO ---
+        if (finalRank.fmodEventInstance.isValid())
+        {
+            finalRank.fmodEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            finalRank.fmodEventInstance.start();
+        }
     }
 
     private void OnVideoFinished(VideoPlayer vp)
     {
         if (!hasPlayed) return;
 
-        vp.Stop();
+        // Stop FMOD
+        if (finalRank != null && finalRank.fmodEventInstance.isValid())
+        {
+            finalRank.fmodEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+
         hasPlayed = false;
     }
 }
