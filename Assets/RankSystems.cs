@@ -40,7 +40,7 @@ public class RankSystems : MonoBehaviour
     void Start()
     {
         if (pointManager == null)
-            pointManager = GameObject.Find("VideoPlayer").GetComponent<PointManager>();
+            pointManager = PointManager.Instance;
 
         // Sort ranks in ascending order by threshold
         ranks.Sort((a, b) => a.pointThreshold.CompareTo(b.pointThreshold));
