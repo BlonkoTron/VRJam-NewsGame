@@ -80,17 +80,17 @@ public class GamePlayLoop : MonoBehaviour
         float currentPoints = animator.GetFloat(pointsParameterName);
         if (!pointsSoundPlayed && currentPoints > 0f && lastPointsValue == 0f)
         {
-            // Enable all objects to monitor
-            if (objectsToMonitor != null && objectsToMonitor.Length > 0)
+            // Enable all objects to monitor and set NextSequenceStarted once
+            if (!NextSequenceStarted && objectsToMonitor != null && objectsToMonitor.Length > 0)
             {
                 foreach (GameObject obj in objectsToMonitor)
                 {
                     if (obj != null)
                     {
                         obj.SetActive(true);
-                        NextSequenceStarted = true;
                     }
                 }
+                NextSequenceStarted = true;
             }
             
             Audiomanager.instance.PlaySound(PointsSoundEvent, transform.position);
