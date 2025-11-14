@@ -11,10 +11,25 @@ public class ProtesterHivemind : MonoBehaviour
     [Header("Cosmetic Stuff")]
     public Material[] materials;
 
+    [Header("ProtesterSpawnerStuff")]
+    [SerializeField] private GameObject attackerSpawner;
+    [SerializeField] private int despawnThreshold;
+
+    private int deadProtesters;
+
     private void Awake()
     {
         Instance = this;
     }
 
+    public void checkDeadProtesters()
+    {
+        deadProtesters++;
 
+        if (deadProtesters >= despawnThreshold)
+        {
+            attackerSpawner.SetActive(false);
+        }
+
+    }
 }

@@ -1,13 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AnimationToRagdoll : MonoBehaviour
 {
     [SerializeField] Collider myCollider;
     [SerializeField] float respawnTime = 30f;
     Rigidbody[] rigidbodies;
+
+    [SerializeField] GameObject DespawnPoof;
+
+    private NavMeshAgent agent;
+
     bool bIsRagdoll = false;
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
     void Start()
     {
         rigidbodies = GetComponentsInChildren<Rigidbody>();
@@ -20,7 +31,9 @@ public class AnimationToRagdoll : MonoBehaviour
         if (!bIsRagdoll && collision.gameObject.tag == "Grabbable")
         {
             ToggleRagdoll(false);
-            StartCoroutine(GetBackUp());
+            StartCoroutine(Despawn());
+
+            agent.enabled = false;
         }
     }
     private void ToggleRagdoll(bool bisAnimating)
@@ -40,24 +53,25 @@ public class AnimationToRagdoll : MonoBehaviour
         }
     }
 
-    private IEnumerator GetBackUp()
+    private IEnumerator Despawn()
     {
         yield return new WaitForSeconds(respawnTime);
-        ToggleRagdoll(true);
+
+        Instantiate(DespawnPoof, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
+
     }
 
     void RandomAnimation()
     {
-        int randomNum = Random.Range(0, 2);
-        Debug.Log(randomNum);
         Animator animator = GetComponent<Animator>();
-        if (randomNum == 0)
-        {
-            animator.SetTrigger("Walk");
-        }
-        else
-        {
-            animator.SetTrigger("Idle");
-        }
+        animator.SetTrigger("Walking");
+
+    }
+
+    private void OnDestroy()
+    {
+
     }
 }
