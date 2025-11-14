@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297415628961183789, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6572349052076068416, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
       propertyPath: m_Pivot.x
@@ -137,71 +137,71 @@ MonoBehaviour:
     videoClip: {fileID: 32900000, guid: 3d724e375f86fcb42b8957884580809b, type: 3}
     fmodEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: -1264391269
+        Data2: 1158726818
+        Data3: 1935205308
+        Data4: -1841063143
+      Path: event:/Ranks/S_rank
   - rankName: A_rank
     pointThreshold: 600
     videoClip: {fileID: 32900000, guid: 7ab9e7421eb0a0f47b7b2d34e28aa554, type: 3}
     fmodEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: 1945729259
+        Data2: 1106476407
+        Data3: -1345125195
+        Data4: 1765972236
+      Path: event:/Ranks/A_rank
   - rankName: B_rank
     pointThreshold: 500
     videoClip: {fileID: 32900000, guid: cb64271a825f44b4896681d677e3a110, type: 3}
     fmodEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: 2101753089
+        Data2: 1096366699
+        Data3: -887683435
+        Data4: -1311454898
+      Path: event:/Ranks/B_rank
   - rankName: C_rank
     pointThreshold: 400
     videoClip: {fileID: 32900000, guid: 23b9ccd4cc55ddf489d74a13154e1dd8, type: 3}
     fmodEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: -1720362989
+        Data2: 1158426476
+        Data3: 1937300118
+        Data4: -153958622
+      Path: event:/Ranks/C_rank
   - rankName: D_rank
     pointThreshold: 300
     videoClip: {fileID: 32900000, guid: 2774bf6c30ab82042acd4452cfea6ac7, type: 3}
     fmodEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: 386691145
+        Data2: 1330291856
+        Data3: -2121070965
+        Data4: 898858362
+      Path: event:/Ranks/D_rank
   - rankName: E_rank
     pointThreshold: 200
     videoClip: {fileID: 32900000, guid: a180bd0986a22d243be7053702917aca, type: 3}
     fmodEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: 292659921
+        Data2: 1170821470
+        Data3: -219122260
+        Data4: 1034350377
+      Path: event:/Ranks/E_rank
   - rankName: F_rank
     pointThreshold: 100
     videoClip: {fileID: 32900000, guid: e768bfb59f2687c498db7e984889d23f, type: 3}
     fmodEvent:
       Guid:
-        Data1: -39901835
-        Data2: 1098706200
-        Data3: -584517755
-        Data4: -1333912241
-      Path: event:/Evilguy/Evilguy_1
+        Data1: -1624497280
+        Data2: 1135903382
+        Data3: 1205290666
+        Data4: 1229423782
+      Path: event:/Ranks/F_rank
   pointManager: {fileID: 0}
   useManualPoints: 0
   manualPoints: 0

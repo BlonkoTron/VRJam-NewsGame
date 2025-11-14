@@ -261,6 +261,7 @@ MonoBehaviour:
   Banks:
   - Music
   - ouch
+  - Ranks
   - SFX
   - Voices
   BanksToLoad: []
