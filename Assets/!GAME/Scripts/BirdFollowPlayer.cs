@@ -8,10 +8,12 @@ public class BirdFollowPlayer : MonoBehaviour
     [SerializeField] private Transform target;
 
     private bool hasBeenGrabbed=false;
+    private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         if (target==null)
         {
             target = Camera.main.transform;
@@ -20,7 +22,7 @@ public class BirdFollowPlayer : MonoBehaviour
     void Update()
     {
         // Check if the positions are approximately equal.
-        if (Vector3.Distance(transform.position, target.position) > minDistanceToStopMoving)
+        if (Vector3.Distance(transform.position, target.position) > minDistanceToStopMoving && hasBeenGrabbed==false)
         {
             // Move our position a step closer to the target.
             float step = speed * Time.deltaTime; // calculate distance to move
@@ -39,6 +41,11 @@ public class BirdFollowPlayer : MonoBehaviour
         {
             Instantiate(explodeParticlePrefab,transform.position,Quaternion.identity);
             Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Grabbable"))
+        {
+            hasBeenGrabbed = true;
+            rb.useGravity = true;
         }
     }
 
