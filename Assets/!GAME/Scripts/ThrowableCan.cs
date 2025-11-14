@@ -30,7 +30,7 @@ public class ThrowableCan : MonoBehaviour
         hasBeenGrabbed = true;
         rb.useGravity = true;
         shineParticle.Stop();
-        onGrabbed.Invoke();
+        onGrabbed?.Invoke();
     }
     private void OnCollisionEnter(Collision collision)
     {
