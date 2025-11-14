@@ -8561,6 +8561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointEndSequence
       objectReference: {fileID: 0}
+    - target: {fileID: 9061673506645479449, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: pointCountTime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
