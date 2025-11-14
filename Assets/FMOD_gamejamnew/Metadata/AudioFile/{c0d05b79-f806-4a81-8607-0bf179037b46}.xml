@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c0d05b79-f806-4a81-8607-0bf179037b46}">
+		<property name="assetPath">
+			<value>talk/Evilspeech.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>57.721145833333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ea52f013-cdba-4158-a68e-b7086a5ffbcd}</destination>
+		</relationship>
+	</object>
+</objects>

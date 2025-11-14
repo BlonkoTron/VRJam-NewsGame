@@ -14,12 +14,16 @@ public class PointsRayCast : MonoBehaviour
     public GameObject recordIndicator;
 
     public Image camLinesImage;
-   
+    [SerializeField] private GameObject particles;
+    private ParticleSystem particleSystem;
+
+    private Color gold = new Color(255f, 255f, 0f);
 
     private void Awake()
     {
         // Fix: assign to the field, not a new local variable
         recordingManager = GetComponent<RecordingManager>();
+        particleSystem = particles.GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -37,9 +41,18 @@ public class PointsRayCast : MonoBehaviour
             {
                 camLinesImage.color= Color.green;
 
-                if (recordIndicator.activeSelf)
+                if (recordIndicator.activeSelf && PointManager.Instance != null)
                 {
-                    currentPoints += 1;
+                        PointManager.Instance.totalPoints += 1;
+                }
+            }
+            else if (hitInfo.collider.CompareTag("OneTimePoints"))
+            {
+                camLinesImage.color = gold;
+               
+                if (recordIndicator.activeSelf && PointManager.Instance != null)
+                {
+                        TargetHit(hitInfo.collider.gameObject);
                 }
             }
             else
@@ -57,6 +70,13 @@ public class PointsRayCast : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.forward * hitDistance, boxHalfExtents * 2);
+    }
+
+    void TargetHit(GameObject obj)
+    {
+            obj.tag = "Untagged";
+            PointManager.Instance.totalPoints += 2500;
+            particleSystem.Play();
     }
 }
 
