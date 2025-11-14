@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0c440928-4ad2-41b1-9b86-0ae32e8c5572}">
+		<property name="assetPath">
+			<value>Ranks/B_rank.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>19.017142857142858</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ea52f013-cdba-4158-a68e-b7086a5ffbcd}</destination>
+		</relationship>
+	</object>
+</objects>
