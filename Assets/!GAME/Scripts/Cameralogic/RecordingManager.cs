@@ -87,6 +87,8 @@ public class RecordingManager : MonoBehaviour
             }
         }
     }
+
+    //HERE MR BENJAMIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHH
     public void CheckBatteryState()
     {
         Debug.Log("Checking Battery State");
