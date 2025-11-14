@@ -27,6 +27,8 @@ public class RankSystems : MonoBehaviour
 
     [Header("Point Manager")]
     public PointManager pointManager;
+    private EndSequneceController endSequneceController;
+
 
     [Header("Manual Testing")]
     public bool useManualPoints = false;
@@ -41,6 +43,8 @@ public class RankSystems : MonoBehaviour
     {
         if (pointManager == null)
             pointManager = PointManager.Instance;
+
+        endSequneceController = GetComponent<EndSequneceController>();
 
         // Sort ranks in ascending order by threshold
         ranks.Sort((a, b) => a.pointThreshold.CompareTo(b.pointThreshold));
@@ -90,6 +94,8 @@ public class RankSystems : MonoBehaviour
         videoPlayer.clip = finalRank.videoClip;
         videoPlayer.isLooping = false;
         videoPlayer.Play();
+
+        endSequneceController.StartEndScene(finalRank);
 
         // --- PLAY FMOD AUDIO ---
         if (finalRank.fmodEventInstance.isValid())

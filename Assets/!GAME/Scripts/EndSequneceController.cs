@@ -12,7 +12,15 @@ public class EndSequneceController : MonoBehaviour
     private float pointTotal;
     [SerializeField] private float pointCountTime = 2f;
 
-
+    [Header("Rank Onjects")]
+    private RankEntry pointRank;
+    [SerializeField] private GameObject S_Rank;
+    [SerializeField] private GameObject A_Rank;
+    [SerializeField] private GameObject B_Rank;
+    [SerializeField] private GameObject C_Rank;
+    [SerializeField] private GameObject D_Rank;
+    [SerializeField] private GameObject E_Rank;
+    [SerializeField] private GameObject F_Rank;
 
     private void Start()
     {
@@ -20,9 +28,11 @@ public class EndSequneceController : MonoBehaviour
         EndCanvas.SetActive(false);
     }
 
-    public void StartEndScene()
+    public void StartEndScene(RankEntry rank)
     {
         EndCanvas.SetActive(true);
+
+        pointRank = rank;
 
         StartCoroutine(pointAddingSequence(0, pointTotal, pointCountTime));
 
@@ -47,12 +57,47 @@ public class EndSequneceController : MonoBehaviour
         }
 
         currentPoints = to; // ensure it ends exactly at target
-        StopEndScene();
+
+        RankShow(pointRank);
+
     }
 
 
-    private void StopEndScene()
+    private void RankShow(RankEntry rank)
     {
         StopCoroutine(pointAddingSequence(0, pointTotal, pointCountTime));
+
+        switch (pointRank.rankName)
+        {
+            case "S_rank":
+                S_Rank.SetActive(true);
+                return;
+
+            case "A_rank":
+                A_Rank.SetActive(true);
+                return;
+
+            case "B_rank":
+                B_Rank.SetActive(true);
+                return;
+
+            case "C_rank":
+                C_Rank.SetActive(true);
+                return;
+
+            case "D_rank":
+                D_Rank.SetActive(true);
+                return;
+
+            case "E_rank":
+                E_Rank.SetActive(true);
+                return;
+
+            case "F_rank":
+                F_Rank.SetActive(true);
+                return;
+
+        }
+
     }
 }
