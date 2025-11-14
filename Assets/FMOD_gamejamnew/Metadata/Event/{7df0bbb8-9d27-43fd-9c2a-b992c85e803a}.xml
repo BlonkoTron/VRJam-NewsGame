@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{7df0bbb8-9d27-43fd-9c2a-b992c85e803a}">
 		<property name="name">
-			<value>Bird_3</value>
+			<value>Bird_Spawn</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -76,7 +76,10 @@
 	</object>
 	<object class="SingleSound" id="{d00f4931-af31-4bb5-8c4e-da6c3fafa985}">
 		<property name="length">
-			<value>4.3124943310657597</value>
+			<value>1.45</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.20000000000000001</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{a35210c3-5aef-4a66-9780-0184c4aecac8}</destination>

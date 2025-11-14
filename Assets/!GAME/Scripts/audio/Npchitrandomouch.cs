@@ -7,15 +7,14 @@ public class Npchitrandomouch : MonoBehaviour
     [SerializeField] private List<EventReference> audioLines = new List<EventReference>();
     [SerializeField] private EventReference canhit;
 
-    public bool test;
-
+    public bool Soundactivate;
 
     void Update()
     {
-        if (test)
+        if (Soundactivate)
         {
             PlayRandomOuch();
-            test = false;
+            Soundactivate = false;
         }
     }
     

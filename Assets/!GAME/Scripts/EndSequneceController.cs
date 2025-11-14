@@ -27,13 +27,14 @@ public class EndSequneceController : MonoBehaviour
 
     private void Start()
     {
-        pointTotal = PointManager.Instance.totalPoints;
         EndCanvas.SetActive(false);
     }
 
     public void StartEndScene(RankEntry rank)
     {
-        EndCanvas.SetActive(true);
+        pointTotal = PointManager.Instance.totalPoints;
+
+        
 
         pointRank = rank;
 
@@ -48,8 +49,13 @@ public class EndSequneceController : MonoBehaviour
         {
             startPoints = true;
             yield return new WaitForSeconds(initialDelay);
+
+            EndCanvas.SetActive(true);
+
         }
-            
+
+        
+
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -59,8 +65,7 @@ public class EndSequneceController : MonoBehaviour
             currentPoints = Mathf.Lerp(from, to, t);
             currentPoints = Mathf.RoundToInt(currentPoints);
 
-
-            pointText.text = "Points: " + currentPoints.ToString();
+            pointText.text = currentPoints.ToString();
 
             yield return null;
         }

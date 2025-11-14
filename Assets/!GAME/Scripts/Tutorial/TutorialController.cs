@@ -11,7 +11,6 @@ public class TutorialController : MonoBehaviour
     public UnityEvent OnTutorialEnded;
 
     [SerializeField] private VideoPlayer video;
-    [SerializeField] private GameObject playButton;
 
     [SerializeField] private Transform teleportDestination;
 
@@ -26,11 +25,14 @@ public class TutorialController : MonoBehaviour
             Instance = this;
         }
     }
+    private void Start()
+    {
+        Startvideo();
+    }
     public void Startvideo()
     {
         video.Play();
         video.loopPointReached += OnVideoEnd;
-        playButton.SetActive(false);
     }
 
     private void OnVideoEnd(VideoPlayer vp)
@@ -38,14 +40,9 @@ public class TutorialController : MonoBehaviour
         video.loopPointReached -= OnVideoEnd;
         Debug.Log("video ended, now fade out and teleport player");
         OnTutorialEnded.Invoke();
+        TransitionController.Instance.OnFadeOutEnd.AddListener(NextScene);
         TransitionController.Instance.FadeOut();
-        if (teleportDestination!=null)
-        {
-            TransitionController.Instance.OnFadeOutEnd.AddListener(TeleportPlayer);
-        } else
-        {
-            TransitionController.Instance.OnFadeOutEnd.AddListener(NextScene);
-        }
+
     }
     private void TeleportPlayer()
     {
@@ -58,9 +55,14 @@ public class TutorialController : MonoBehaviour
     {
         TransitionController.Instance.OnFadeOutEnd.RemoveListener(NextScene);
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (SceneManager.sceneCount > nextSceneIndex)
+        Debug.Log("scene"+nextSceneIndex);
+        if (SceneManager.GetSceneByBuildIndex(nextSceneIndex)!=null)
         {
+            Debug.Log("Next scene");
             SceneManager.LoadScene(nextSceneIndex);
+        } else
+        {
+            Debug.Log("No Scene");
         }
     }
 }
