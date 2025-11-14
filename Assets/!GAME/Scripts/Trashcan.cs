@@ -1,16 +1,37 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Trashcan : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject trashThrowablePrefab;
-    private float spawnForce = 100;
-    private void OnTriggerEnter(Collider other)
+    private GameObject myCan;
+    [SerializeField] private float waveSpeed = 1;
+    [SerializeField] private float waveAmount = 1;
+    private float timeToRespawnCan = 5f;
+
+    private void Start()
     {
-        if (other.gameObject.CompareTag("Grabbable")==false)
-        {
-            Instantiate(trashThrowablePrefab, null, spawnPoint);
-            trashThrowablePrefab.GetComponent<Rigidbody>().AddForce(Vector3.up*spawnForce,ForceMode.Impulse);
-        }
+        SpawnCan();
     }
+
+    private void SpawnCan()
+    {
+        myCan = Instantiate(trashThrowablePrefab, spawnPoint.position,Quaternion.identity);
+        myCan.GetComponent<ThrowableCan>().onGrabbed += OnMyCanGrabbed;
+    }
+    private void OnMyCanGrabbed()
+    {
+        myCan.GetComponent<ThrowableCan>().onGrabbed -= OnMyCanGrabbed;
+        myCan = null;
+        StartCoroutine(WaitToSPawnNewCan());
+
+    }
+    private IEnumerator WaitToSPawnNewCan()
+    {
+        yield return new WaitForSeconds(timeToRespawnCan);
+        SpawnCan();
+    }
+
 }
