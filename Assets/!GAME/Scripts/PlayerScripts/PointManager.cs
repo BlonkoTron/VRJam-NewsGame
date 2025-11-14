@@ -7,58 +7,22 @@ public class PointManager : MonoBehaviour
     public static PointManager Instance;
 
     public float totalPoints;
-    private float currentPoints = 0;
-    [SerializeField] private float pointCountTime = 2f;
-    private float time;
-
-    [SerializeField] private GameObject EndCanvas;
-    [SerializeField] private TMP_Text pointText;
-
 
     private void Start()
     {
-        Instance = this;
-        EndCanvas.SetActive(false);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
         totalPoints = 0;
 
-        //StartEndScene();
-
     }
-
-    public void StartEndScene()
-    {
-        EndCanvas.SetActive(true);
-
-        StartCoroutine(pointAddingSequence(0,totalPoints,pointCountTime));
-
-    }
-
-
-    private IEnumerator pointAddingSequence(float from, float to, float duration)
-    {
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration); // normalized [0,1]
-            currentPoints = Mathf.Lerp(from, to, t);
-            currentPoints = Mathf.RoundToInt(currentPoints);
-
-
-            pointText.text = "Points: " + currentPoints.ToString();
-
-            yield return null;
-        }
-
-        currentPoints = to; // ensure it ends exactly at target
-        StopEndScene();
-    }
-
-
-    private void StopEndScene() 
-    {
-        StopCoroutine(pointAddingSequence(0, totalPoints, pointCountTime));
-    }
+    
 
 }

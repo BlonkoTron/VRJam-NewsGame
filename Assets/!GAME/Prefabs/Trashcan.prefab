@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 7834123486622370039}
   trashThrowablePrefab: {fileID: 5624761592132868960, guid: efef97da176ce864dba944623c44cf11, type: 3}
+  waveSpeed: 1
+  waveAmount: 0.1
 --- !u!1 &2324023794264427341
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 2324023794264427341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.261, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
