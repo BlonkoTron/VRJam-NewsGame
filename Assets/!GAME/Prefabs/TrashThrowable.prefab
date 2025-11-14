@@ -42,7 +42,7 @@ ParticleSystem:
   m_GameObject: {fileID: 4386319021825324774}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 0.5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1275,7 +1275,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.1415925
+      scalar: 0.7853981
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -4875,6 +4875,7 @@ GameObject:
   - component: {fileID: 3565525073372769646}
   - component: {fileID: -8543296596834840836}
   - component: {fileID: 1039214888266864086}
+  - component: {fileID: 8468629821753195618}
   m_Layer: 0
   m_Name: TrashThrowable
   m_TagString: Grabbable
@@ -4930,7 +4931,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3897968775c8b4b49bfba9a52a244f77, type: 2}
+  - {fileID: 2100000, guid: ab87807a356febb4cb4c47b300193a39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5166,6 +5167,22 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &8468629821753195618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624761592132868960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadb35286054ab24ea3713c95f827db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMaterials:
+  - {fileID: 2100000, guid: 6620d94f3656eb94db95e26bf5768795, type: 2}
+  - {fileID: 2100000, guid: 794984f6b9e31924e8ca434bca51f149, type: 2}
+  - {fileID: 2100000, guid: 3897968775c8b4b49bfba9a52a244f77, type: 2}
 --- !u!1 &7772525604405907233
 GameObject:
   m_ObjectHideFlags: 0
