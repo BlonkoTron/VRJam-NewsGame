@@ -71234,6 +71234,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4339296282207553551, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4924657685036694181, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
       propertyPath: teleportDestination
       value: 
