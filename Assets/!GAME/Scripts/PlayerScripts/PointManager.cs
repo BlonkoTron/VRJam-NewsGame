@@ -59,9 +59,6 @@ public class PointManager : MonoBehaviour
     private void StopEndScene() 
     {
         StopCoroutine(pointAddingSequence(0, totalPoints, pointCountTime));
-
-
-
     }
 
 }
