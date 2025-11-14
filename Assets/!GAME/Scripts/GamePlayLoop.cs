@@ -7,8 +7,12 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] public string allObjectsDisabledParameterName = "AllDisabled"; // Parameter to set when all objects are disabled
     [SerializeField] public string animationStateName = "NextAnimation";
     [SerializeField] public string animationParameterName = "AnimationComplete"; // Bool parameter to check
+    [SerializeField] public float animationDuration = 5f; // Duration in seconds before setting AnimationComplete
+    [SerializeField] public float secondTimerDuration = 17.5f; // Duration for second timer
     [SerializeField] public GameObject objectToDisable;
     [SerializeField] public GameObject objectToEnable;
+    [SerializeField] public GameObject BirdAnimationOff;
+    [SerializeField] public GameObject HouseAnimationON;
     
     private bool animationTriggered = false;
     private bool checkingForCompletion = false;
@@ -36,20 +40,8 @@ public class GamePlayLoop : MonoBehaviour
         if (!animationTriggered && AreAllObjectsDisabled())
         {
             animationTriggered = true;
-            checkingForCompletion = true;
-        }
-
-        // Check if animation has finished by checking the normalized time
-        if (checkingForCompletion)
-        {
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            Debug.Log($"Checking animation: IsName={stateInfo.IsName(animationStateName)}, NormalizedTime={stateInfo.normalizedTime}");
-            if (stateInfo.IsName(animationStateName) && stateInfo.normalizedTime >= 1.0f)
-            {
-                checkingForCompletion = false;
-                Debug.Log("Animation finished, toggling objects");
-                Invoke(nameof(ToggleObjectsDelayed), 0.1f);
-            }
+            Debug.Log($"<color=cyan>All objects disabled! Starting {animationDuration} second timer</color>");
+            StartCoroutine(AnimationTimerCoroutine());
         }
     }
 
@@ -80,6 +72,33 @@ public class GamePlayLoop : MonoBehaviour
         return activeCount == 0;
     }
 
+    private System.Collections.IEnumerator AnimationTimerCoroutine()
+    {
+        Debug.Log($"Timer started for {animationDuration} seconds");
+        yield return new WaitForSeconds(animationDuration);
+        
+        Debug.Log("<color=yellow>Timer finished, setting AnimationComplete to true</color>");
+        animator.SetBool(animationParameterName, true);
+        ToggleObjectsDelayed();
+        // Start second timer
+        
+        Debug.Log($"<color=cyan>Starting second timer for {secondTimerDuration} seconds</color>");
+        yield return new WaitForSeconds(secondTimerDuration);
+        
+        BulidingAnimationOn();
+        Debug.Log("<color=yellow>Second timer finished, toggling objects</color>");
+        
+    }
+
+    private void BulidingAnimationOn()
+    {
+        if (objectToDisable != null)
+        {
+            objectToDisable.SetActive(true);
+            objectToEnable.SetActive(false);
+        }
+    }
+
     private void ToggleObjectsDelayed()
     {
         if (objectToDisable != null)
@@ -91,6 +110,7 @@ public class GamePlayLoop : MonoBehaviour
         {
             objectToEnable.SetActive(true);
         }
+    
     }
 
     // Optional: Reset the trigger if you need to check again
