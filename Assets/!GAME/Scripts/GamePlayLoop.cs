@@ -63,6 +63,18 @@ public class GamePlayLoop : MonoBehaviour
 
     void Start()
     {
+        // Enable all objects to monitor at start
+        if (objectsToMonitor != null && objectsToMonitor.Length > 0)
+        {
+            foreach (GameObject obj in objectsToMonitor)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                }
+            }
+        }
+        
         StartCoroutine(startSequenceCoroutine());
     }
 
@@ -80,6 +92,18 @@ public class GamePlayLoop : MonoBehaviour
         float currentPoints = animator.GetFloat(pointsParameterName);
         if (!pointsSoundPlayed && currentPoints > 0f && lastPointsValue == 0f)
         {
+            // Enable all objects to monitor
+            if (objectsToMonitor != null && objectsToMonitor.Length > 0)
+            {
+                foreach (GameObject obj in objectsToMonitor)
+                {
+                    if (obj != null)
+                    {
+                        obj.SetActive(true);
+                    }
+                }
+            }
+            
             Audiomanager.instance.PlaySound(PointsSoundEvent, transform.position);
             pointsSoundPlayed = true;
             UnityEngine.Debug.Log($"<color=green>Points sound played! Points: {currentPoints}</color>");
