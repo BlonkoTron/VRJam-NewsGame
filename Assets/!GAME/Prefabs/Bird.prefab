@@ -211,6 +211,20 @@ MonoBehaviour:
   minDistanceToStopMoving: 0.1
   explodeParticlePrefab: {fileID: 1825766213508800271, guid: bc54e893b2eaf7047bd3c8529d49aad2, type: 3}
   target: {fileID: 0}
+  Birderspawn_1:
+    Guid:
+      Data1: 2112928696
+      Data2: 1140694311
+      Data3: -1833358692
+      Data4: 981491400
+    Path: event:/Birds/Bird_Spawn
+  Birderdead_2:
+    Guid:
+      Data1: -1874878825
+      Data2: 1083333378
+      Data3: -2083269459
+      Data4: -346681628
+    Path: event:/Birds/Bird_Dead
 --- !u!114 &2847923749790620407
 MonoBehaviour:
   m_ObjectHideFlags: 0

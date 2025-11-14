@@ -8,16 +8,16 @@ public class PointManager : MonoBehaviour
 
     public float totalPoints;
 
-    private void Start()
+    private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(this);
         }
         else
         {
-            Destroy(gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
        
         totalPoints = 0;

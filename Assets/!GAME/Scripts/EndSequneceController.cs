@@ -8,9 +8,12 @@ public class EndSequneceController : MonoBehaviour
     [SerializeField] private GameObject EndCanvas;
     [SerializeField] private TMP_Text pointText;
 
+    private bool startPoints = false;
+
     private float currentPoints = 0;
     private float pointTotal;
     [SerializeField] private float pointCountTime = 2f;
+    [SerializeField] private float initialDelay = 6.2f;
 
     [Header("Rank Onjects")]
     private RankEntry pointRank;
@@ -24,13 +27,14 @@ public class EndSequneceController : MonoBehaviour
 
     private void Start()
     {
-        pointTotal = PointManager.Instance.totalPoints;
         EndCanvas.SetActive(false);
     }
 
     public void StartEndScene(RankEntry rank)
     {
-        EndCanvas.SetActive(true);
+        pointTotal = PointManager.Instance.totalPoints;
+
+        
 
         pointRank = rank;
 
@@ -41,6 +45,17 @@ public class EndSequneceController : MonoBehaviour
 
     private IEnumerator pointAddingSequence(float from, float to, float duration)
     {
+        if (!startPoints)
+        {
+            startPoints = true;
+            yield return new WaitForSeconds(initialDelay);
+
+            EndCanvas.SetActive(true);
+
+        }
+
+        
+
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -50,8 +65,7 @@ public class EndSequneceController : MonoBehaviour
             currentPoints = Mathf.Lerp(from, to, t);
             currentPoints = Mathf.RoundToInt(currentPoints);
 
-
-            pointText.text = "Points: " + currentPoints.ToString();
+            pointText.text = currentPoints.ToString();
 
             yield return null;
         }

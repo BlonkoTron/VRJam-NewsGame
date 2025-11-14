@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class AnimationToRagdoll : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class AnimationToRagdoll : MonoBehaviour
 
     bool bIsRagdoll = false;
 
+    Npchitrandomouch Ouches;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,6 +26,7 @@ public class AnimationToRagdoll : MonoBehaviour
     {
         rigidbodies = GetComponentsInChildren<Rigidbody>();
         ToggleRagdoll(true);
+        Ouches = GameObject.Find("Randomaudio").GetComponent<Npchitrandomouch>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,7 +43,7 @@ public class AnimationToRagdoll : MonoBehaviour
     private void ToggleRagdoll(bool bisAnimating)
     {
         bIsRagdoll = !bisAnimating;
-
+        Ouches.Soundactivate = true;
         myCollider.enabled = bisAnimating;
         foreach (Rigidbody ragdollBone in rigidbodies)
         {
