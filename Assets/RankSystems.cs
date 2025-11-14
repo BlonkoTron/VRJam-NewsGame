@@ -41,6 +41,7 @@ public class RankSystems : MonoBehaviour
 
     void Start()
     {
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
         if (pointManager == null)
             pointManager = PointManager.Instance;
 
