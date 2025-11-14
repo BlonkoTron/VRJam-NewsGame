@@ -52,7 +52,7 @@ public class GamePlayLoop : MonoBehaviour
     private float lastPointsValue = 0f;
     private bool pointsSoundPlayed = false;
 
-    
+    private bool NextSequenceStarted = false;
     
     
     private bool animationTriggered = false;
@@ -88,6 +88,7 @@ public class GamePlayLoop : MonoBehaviour
                     if (obj != null)
                     {
                         obj.SetActive(true);
+                        NextSequenceStarted = true;
                     }
                 }
             }
@@ -100,7 +101,7 @@ public class GamePlayLoop : MonoBehaviour
         
         // Update the animator parameter based on object states
         bool allDisabled = AreAllObjectsDisabled();
-        if (allDisabled != lastAllDisabledState)
+        if (allDisabled != lastAllDisabledState && NextSequenceStarted== true)
         {
             animator.SetBool(allObjectsDisabledParameterName, allDisabled);
             
