@@ -60791,6 +60791,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 288323779113968552, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1297415628961183789, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -60885,8 +60889,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3955737972193768815, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1376001168}
+      addedObject: {fileID: 1376001173}
   m_SourcePrefab: {fileID: 100100000, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
+--- !u!328 &1256184191 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 288323779113968552, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
+  m_PrefabInstance: {fileID: 1256184190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1271193484
 GameObject:
   m_ObjectHideFlags: 0
@@ -62046,6 +62055,7 @@ MonoBehaviour:
       Data3: -1488901221
       Data4: 1403068482
     Path: event:/hits/Canhit
+  test: 0
 --- !u!1 &1367010183
 GameObject:
   m_ObjectHideFlags: 0
@@ -62437,12 +62447,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3955737972193768815, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
   m_PrefabInstance: {fileID: 1256184190}
   m_PrefabAsset: {fileID: 0}
---- !u!328 &1376001164 stripped
-VideoPlayer:
-  m_CorrespondingSourceObject: {fileID: 288323779113968552, guid: ca762e1008bc8ad4ca5982c3c2235df1, type: 3}
-  m_PrefabInstance: {fileID: 1256184190}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1376001168
+--- !u!114 &1376001173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62451,33 +62456,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376001163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d4780901aaba45bf71dfb7929732c, type: 3}
+  m_Script: {fileID: 11500000, guid: cfaa00a97fb15dd418dbcbbe3ccef217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Videoplayers: {fileID: 1376001164}
-  S_Rank: {fileID: 0}
-  A_Rank: {fileID: 0}
-  B_Rank: {fileID: 0}
-  C_Rank: {fileID: 0}
-  D_Rank: {fileID: 0}
-  E_Rank: {fileID: 0}
-  F_Rank: {fileID: 0}
-  S_rankCheck: 0
-  A_rankCheck: 0
-  B_rankCheck: 0
-  C_rankCheck: 0
-  D_rankCheck: 0
-  E_rankCheck: 0
-  F_rankCheck: 0
-  FinalRank: {fileID: 0}
-  S_Rank_PointThreshold: 0
-  A_Rank_PointThreshold: 0
-  B_Rank_PointThreshold: 0
-  C_Rank_PointThreshold: 0
-  D_Rank_PointThreshold: 0
-  E_Rank_PointThreshold: 0
-  F_Rank_PointThreshold: 0
-  Pointmanagers: {fileID: 0}
+  videoPlayer: {fileID: 1256184191}
+  ranks:
+  - rankName: S_rank
+    pointThreshold: 700
+    videoClip: {fileID: 32900000, guid: 3d724e375f86fcb42b8957884580809b, type: 3}
+  - rankName: A_rank
+    pointThreshold: 600
+    videoClip: {fileID: 32900000, guid: 7ab9e7421eb0a0f47b7b2d34e28aa554, type: 3}
+  - rankName: B_rank
+    pointThreshold: 500
+    videoClip: {fileID: 32900000, guid: cb64271a825f44b4896681d677e3a110, type: 3}
+  - rankName: C_rank
+    pointThreshold: 400
+    videoClip: {fileID: 32900000, guid: 23b9ccd4cc55ddf489d74a13154e1dd8, type: 3}
+  - rankName: D_rank
+    pointThreshold: 300
+    videoClip: {fileID: 32900000, guid: 2774bf6c30ab82042acd4452cfea6ac7, type: 3}
+  - rankName: E_rank
+    pointThreshold: 200
+    videoClip: {fileID: 32900000, guid: a180bd0986a22d243be7053702917aca, type: 3}
+  - rankName: F_rank
+    pointThreshold: 100
+    videoClip: {fileID: 32900000, guid: e768bfb59f2687c498db7e984889d23f, type: 3}
+  pointManager: {fileID: 0}
 --- !u!1 &1378954463
 GameObject:
   m_ObjectHideFlags: 0
