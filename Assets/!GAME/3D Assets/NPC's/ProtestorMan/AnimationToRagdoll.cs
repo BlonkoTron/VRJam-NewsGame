@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 public class AnimationToRagdoll : MonoBehaviour
 {
     [SerializeField] Collider myCollider;
