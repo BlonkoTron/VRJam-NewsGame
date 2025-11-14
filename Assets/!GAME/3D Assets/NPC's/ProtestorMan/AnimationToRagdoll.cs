@@ -70,4 +70,9 @@ public class AnimationToRagdoll : MonoBehaviour
         animator.SetTrigger("Walking");
 
     }
+
+    private void OnDestroy()
+    {
+
+    }
 }
