@@ -101,7 +101,7 @@ public class GamePlayLoop : MonoBehaviour
         
         // Update the animator parameter based on object states
         bool allDisabled = AreAllObjectsDisabled();
-        if (allDisabled != lastAllDisabledState && NextSequenceStarted== true)
+        if (allDisabled != lastAllDisabledState)
         {
             animator.SetBool(allObjectsDisabledParameterName, allDisabled);
             
@@ -111,7 +111,7 @@ public class GamePlayLoop : MonoBehaviour
             lastAllDisabledState = allDisabled;
         }
 
-        if (!animationTriggered && AreAllObjectsDisabled())
+        if (!animationTriggered && AreAllObjectsDisabled() && NextSequenceStarted)
         {
             animationTriggered = true;
             StartCoroutine(AnimationTimerCoroutine());
