@@ -9943,6 +9943,67 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &381928619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9551237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.1951766
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.914097
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740142884516777590, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969910638701200427, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: totalPoints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786926241799134075, guid: ba2694be07d68cf46884280d176f1559, type: 3}
+      propertyPath: m_Name
+      value: PointManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ba2694be07d68cf46884280d176f1559, type: 3}
 --- !u!1001 &421170942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22314,6 +22375,50 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 787604578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &746150602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746150604}
+  - component: {fileID: 746150603}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &746150603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746150602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c095e4145d6ae4387261f38fe546cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &746150604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746150602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18501383, y: 0.7787062, z: 6.0955667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &749191873
 GameObject:
@@ -38706,9 +38811,12 @@ MonoBehaviour:
   allObjectsDisabledParameterName: ProtestersGone
   animationStateName: LookAtMayor
   animationParameterName: AnimationComplete
-  animationDuration: 5
-  secondTimerDuration: 17.5
-  thirdTimerDuration: 34.5
+  pointsParameterName: Points
+  TalkBeforeMayor: 22
+  animationDuration: 67.5
+  secondTimerDuration: 19.5
+  thirdTimerDuration: 37.5
+  TakenByBird: 16
   NewsIntroStart: 10
   objectToDisable: {fileID: 159549213}
   objectToEnable: {fileID: 8896340549310226500}
@@ -38723,6 +38831,62 @@ MonoBehaviour:
       Data3: 1446917011
       Data4: 1907542827
     Path: event:/Newsguy/newsguy_1
+  NewsMan_2Event:
+    Guid:
+      Data1: -735086524
+      Data2: 1249104414
+      Data3: -168656477
+      Data4: -91684465
+    Path: event:/Newsguy/newsguy_3
+  NewsMan_3Event:
+    Guid:
+      Data1: -177978883
+      Data2: 1163944018
+      Data3: -654197117
+      Data4: 1104494111
+    Path: event:/Newsguy/newsguy_4
+  PointsSoundEvent:
+    Guid:
+      Data1: 2025724266
+      Data2: 1268464879
+      Data3: 242292662
+      Data4: -1368547566
+    Path: event:/Newsguy/newsguy_2
+  MayorTalkEvent:
+    Guid:
+      Data1: -39901835
+      Data2: 1098706200
+      Data3: -584517755
+      Data4: -1333912241
+    Path: event:/Evilguy/Evilguy_1
+  NewsMan_4Event:
+    Guid:
+      Data1: -1076704797
+      Data2: 1319304019
+      Data3: -1678276730
+      Data4: 1488954050
+    Path: event:/Newsguy/newsguy_6
+  NewsMan_5Event:
+    Guid:
+      Data1: 277843545
+      Data2: 1208854530
+      Data3: 447852673
+      Data4: -1467913465
+    Path: event:/Newsguy/newsguy_7
+  NewsMan_6Event:
+    Guid:
+      Data1: -43946720
+      Data2: 1186771702
+      Data3: -518510162
+      Data4: -1923059744
+    Path: event:/Newsguy/newsguy_8
+  NewsMan_7Event:
+    Guid:
+      Data1: 325684009
+      Data2: 1115807155
+      Data3: 40455829
+      Data4: -1131500591
+    Path: event:/Newsguy/newsguy_10
 --- !u!4 &1086195484
 Transform:
   m_ObjectHideFlags: 0
@@ -90267,6 +90431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TakenByBiurd
       objectReference: {fileID: 0}
+    - target: {fileID: 44030761065612991, guid: b2452a6c6f24cd04a80d11ff2f51398f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1815950808462152268, guid: b2452a6c6f24cd04a80d11ff2f51398f, type: 3}
       propertyPath: m_Name
       value: Bone
@@ -90344,3 +90512,5 @@ SceneRoots:
   - {fileID: 4300079711627592923}
   - {fileID: 619721003}
   - {fileID: 1630096995}
+  - {fileID: 381928619}
+  - {fileID: 746150604}
