@@ -1,4 +1,8 @@
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+using FMOD;
+using System.ComponentModel;
 
 public class GamePlayLoop : MonoBehaviour
 {
@@ -10,6 +14,8 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] public float animationDuration = 5f; // Duration in seconds before setting AnimationComplete
     [SerializeField] public float secondTimerDuration = 17.5f; // Duration for second timer
     [SerializeField] public float thirdTimerDuration = 34.5f;
+
+    [SerializeField] public float NewsIntroStart = 10f;
     [SerializeField] public GameObject objectToDisable;
     [SerializeField] public GameObject objectToEnable;
     [SerializeField] public GameObject BirdAnimationOff;
@@ -17,6 +23,14 @@ public class GamePlayLoop : MonoBehaviour
     
     [SerializeField] public GameObject Door;
     [SerializeField] public GameObject KajiuAnimation;
+
+
+    private EventInstance NewsMan_1;
+
+    [SerializeField] private EventReference NewsMan_1Event;
+
+    
+    
     
     private bool animationTriggered = false;
     private bool checkingForCompletion = false;
@@ -36,7 +50,6 @@ public class GamePlayLoop : MonoBehaviour
             
             // Verify the parameter was set
             bool verifyValue = animator.GetBool(allObjectsDisabledParameterName);
-            Debug.Log($"Verified parameter value: {verifyValue}");
             
             lastAllDisabledState = allDisabled;
         }
@@ -44,7 +57,6 @@ public class GamePlayLoop : MonoBehaviour
         if (!animationTriggered && AreAllObjectsDisabled())
         {
             animationTriggered = true;
-            Debug.Log($"<color=cyan>All objects disabled! Starting {animationDuration} second timer</color>");
             StartCoroutine(AnimationTimerCoroutine());
         }
     }
@@ -53,7 +65,6 @@ public class GamePlayLoop : MonoBehaviour
     {
         if (objectsToMonitor == null || objectsToMonitor.Length == 0)
         {
-            Debug.LogWarning("objectsToMonitor is null or empty!");
             return false;
         }
 
@@ -69,7 +80,7 @@ public class GamePlayLoop : MonoBehaviour
         // Only log when count changes
         if (activeCount != lastActiveCount)
         {
-            Debug.Log($"Objects monitored: {objectsToMonitor.Length}, Active: {activeCount}, All disabled: {activeCount == 0}");
+
             lastActiveCount = activeCount;
         }
         
@@ -78,19 +89,20 @@ public class GamePlayLoop : MonoBehaviour
 
     private System.Collections.IEnumerator AnimationTimerCoroutine()
     {
-        Debug.Log($"Timer started for {animationDuration} seconds");
-        yield return new WaitForSeconds(animationDuration);
         
-        Debug.Log("<color=yellow>Timer finished, setting AnimationComplete to true</color>");
+        yield return new WaitForSeconds(NewsIntroStart);
+        NewsMan_1 = Audiomanager.instance.PlaySound(NewsMan_1Event, transform.position);
+
+        yield return new WaitForSeconds(animationDuration);
+
         animator.SetBool(animationParameterName, true);
         ToggleObjectsDelayed();
         // Start second timer
-        
-        Debug.Log($"<color=cyan>Starting second timer for {secondTimerDuration} seconds</color>");
+
         yield return new WaitForSeconds(secondTimerDuration);
         
+
         BulidingAnimationOn();
-        Debug.Log("<color=yellow>Second timer finished, toggling objects</color>");
 
         yield return new WaitForSeconds(thirdTimerDuration);
         Kajiu();
