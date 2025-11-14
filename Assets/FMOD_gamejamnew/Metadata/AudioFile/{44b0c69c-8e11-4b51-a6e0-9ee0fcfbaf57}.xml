@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{44b0c69c-8e11-4b51-a6e0-9ee0fcfbaf57}">
 		<property name="assetPath">
-			<value>Grolbonkodrivethru.wav</value>
+			<value>sfx/Grolbonkodrivethru.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
