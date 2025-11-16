@@ -20,8 +20,10 @@ public class RecordingManager : MonoBehaviour
 
     public Slider batterySlider;
     public Image batteryFillImage;
-    public CheckAttachedBattery checkAttachedBattery;
-    
+   // public CheckAttachedBattery checkAttachedBattery;
+    public CheckBatteryOne checkBatteryOne;
+    public CheckBatteryTwo checkBatteryTwo;
+
     public GameObject lensWarning;
     public GameObject batteryWarning;
 
@@ -96,10 +98,10 @@ public class RecordingManager : MonoBehaviour
     //HERE MR BENJAMIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHH
     public void CheckBatteryState()
     {
-        if (checkAttachedBattery.currentTopBattery != null && checkAttachedBattery.currentBottomBattery !=null)
+        if (checkBatteryOne.currentBatteryOne != null && checkBatteryTwo.currentBatteryTwo !=null)
         {
             Debug.Log("Checking Battery State");
-            if (batteryState.battery_1 && batteryState.battery_2 && checkAttachedBattery.currentTopBattery.GetComponent<Batterydrain>().BatteryLife > 0 && checkAttachedBattery.currentBottomBattery.GetComponent<Batterydrain>().BatteryLife > 0)
+            if (batteryState.battery_1 && batteryState.battery_2 && checkBatteryOne.currentBatteryOne.GetComponent<Batterydrain>().BatteryLife > 0 && checkBatteryTwo.currentBatteryTwo.GetComponent<Batterydrain>().BatteryLife > 0)
             {
                 canRecord = true;
                 Debug.Log("Can Record: " + canRecord);
@@ -131,9 +133,9 @@ public class RecordingManager : MonoBehaviour
 
     public void UpdateBatteryLevel()
     {
-        if (batteryState.battery_1 && batteryState.battery_2 && checkAttachedBattery.currentTopBattery != null && checkAttachedBattery.currentBottomBattery !=null)
+        if (batteryState.battery_1 && batteryState.battery_2 && checkBatteryOne.currentBatteryOne != null && checkBatteryTwo.currentBatteryTwo != null)
         {
-            batterySlider.value = checkAttachedBattery.currentBottomBattery.GetComponent<Batterydrain>().BatteryLife;
+            batterySlider.value = checkBatteryTwo.currentBatteryTwo.GetComponent<Batterydrain>().BatteryLife;
 
             switch (batterySlider.value)
             {

@@ -372,6 +372,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.44
       objectReference: {fileID: 0}
+    - target: {fileID: 3254350962092879839, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529885342562210497, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5006315723434792485, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -448,6 +456,14 @@ PrefabInstance:
       propertyPath: continuousFollow
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: checkBatteryOne
+      value: 
+      objectReference: {fileID: 807613657}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: checkBatteryTwo
+      value: 
+      objectReference: {fileID: 1359157211}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -455,6 +471,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8850036938445279963, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1861887879}
+    - targetCorrespondingSourceObject: {fileID: 7710549696498901328, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 807613657}
+    - targetCorrespondingSourceObject: {fileID: 3373153479314912397, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1359157211}
   m_SourcePrefab: {fileID: 100100000, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
 --- !u!1 &177340477
 GameObject:
@@ -1713,6 +1735,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &807613652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7710549696498901328, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+  m_PrefabInstance: {fileID: 164365961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &807613657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807613652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17ac65179e8b474c857706d4c7aaaf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBatteryOne: {fileID: 0}
+  recordingManager: {fileID: 1173573668}
 --- !u!43 &823251414
 Mesh:
   m_ObjectHideFlags: 0
@@ -2472,6 +2513,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50321f937ed337b4999b0c90657d2881, type: 3}
+--- !u!114 &1173573668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+  m_PrefabInstance: {fileID: 164365961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c65fe049f98984c993d4a5de832533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1227325890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2646,6 +2698,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1571607708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1359157206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3373153479314912397, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+  m_PrefabInstance: {fileID: 164365961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359157211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359157206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb37f4c0e7c80c944b5e3a5b8a85e979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBatteryTwo: {fileID: 0}
+  recordingManager: {fileID: 1173573668}
 --- !u!1 &1397867159
 GameObject:
   m_ObjectHideFlags: 0

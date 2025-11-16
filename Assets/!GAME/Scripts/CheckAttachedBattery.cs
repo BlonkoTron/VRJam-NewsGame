@@ -16,7 +16,7 @@ public class CheckAttachedBattery : MonoBehaviour
             currentTopBattery = other.gameObject;
             recordingManager.CheckBatteryState();
         }
-        else if (other.gameObject.CompareTag("Battery") && isBottomBattery)
+        if (other.gameObject.CompareTag("Battery") && isBottomBattery)
         {
             currentBottomBattery = other.gameObject;
             recordingManager.CheckBatteryState();
@@ -34,7 +34,7 @@ public class CheckAttachedBattery : MonoBehaviour
                 
             }
         }
-        else if (other.gameObject.CompareTag("Battery") && isBottomBattery)
+        if (other.gameObject.CompareTag("Battery") && isBottomBattery)
         {
             if (currentBottomBattery == other.gameObject)
             {

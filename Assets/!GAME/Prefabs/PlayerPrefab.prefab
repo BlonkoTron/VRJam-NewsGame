@@ -712,7 +712,8 @@ MonoBehaviour:
   canRecord: 0
   batterySlider: {fileID: 4052705782718720364}
   batteryFillImage: {fileID: 8618180055922390129}
-  checkAttachedBattery: {fileID: 3254350962092879839}
+  checkBatteryOne: {fileID: 8595253449110823237}
+  checkBatteryTwo: {fileID: 4141812317765775599}
   lensWarning: {fileID: 5088179813858977325}
   batteryWarning: {fileID: 6881987323505672366}
   Batterydeadsound:
@@ -6894,9 +6895,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7584249525482145775, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3254350962092879839}
+    - targetCorrespondingSourceObject: {fileID: 7584249525482145775, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8595253449110823237}
     - targetCorrespondingSourceObject: {fileID: 3210525496746562098, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3529885342562210497}
+    - targetCorrespondingSourceObject: {fileID: 3210525496746562098, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4141812317765775599}
   m_SourcePrefab: {fileID: 100100000, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
 --- !u!114 &2617437665501078986 stripped
 MonoBehaviour:
@@ -7077,7 +7084,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3373153479314912397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8cc73c9ac5b63447a798d773cf6086d, type: 3}
   m_Name: 
@@ -7086,6 +7093,20 @@ MonoBehaviour:
   currentBottomBattery: {fileID: 0}
   isTopBattery: 1
   isBottomBattery: 0
+  recordingManager: {fileID: 8803589873582066548}
+--- !u!114 &4141812317765775599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373153479314912397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb37f4c0e7c80c944b5e3a5b8a85e979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBatteryTwo: {fileID: 0}
   recordingManager: {fileID: 8803589873582066548}
 --- !u!114 &3885838916491901334 stripped
 MonoBehaviour:
@@ -7120,7 +7141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710549696498901328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8cc73c9ac5b63447a798d773cf6086d, type: 3}
   m_Name: 
@@ -7129,6 +7150,20 @@ MonoBehaviour:
   currentBottomBattery: {fileID: 0}
   isTopBattery: 0
   isBottomBattery: 1
+  recordingManager: {fileID: 8803589873582066548}
+--- !u!114 &8595253449110823237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710549696498901328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17ac65179e8b474c857706d4c7aaaf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBatteryOne: {fileID: 0}
   recordingManager: {fileID: 8803589873582066548}
 --- !u!1 &7805758358710231823 stripped
 GameObject:
