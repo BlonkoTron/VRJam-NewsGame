@@ -45,6 +45,7 @@ public class GamePlayLoop : MonoBehaviour
     private EventInstance NewsMan_7;
     private EventInstance NewsMan_8;
     private EventInstance KajiuSound;
+    private EventInstance Cityamb;
 
     [SerializeField] private EventReference NewsMan_1Event;
     [SerializeField] private EventReference NewsMan_2Event;
@@ -52,6 +53,7 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] private EventReference PointsSoundEvent;
     [SerializeField] private EventReference MayorTalkEvent;
     [SerializeField] private EventReference KajiuSoundEvent;
+    [SerializeField] private EventReference Cityambience;
 
     [SerializeField] private EventReference NewsMan_4Event;
     [SerializeField] private EventReference NewsMan_5Event;
@@ -76,6 +78,7 @@ public class GamePlayLoop : MonoBehaviour
 
     void Start()
     {
+        Cityamb = Audiomanager.instance.PlaySound(Cityambience, transform.position);
         StartCoroutine(startSequenceCoroutine());
     }
 

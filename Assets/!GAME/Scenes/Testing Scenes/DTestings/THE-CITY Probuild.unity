@@ -88393,9 +88393,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 619721004}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Cityambience.Path
+      value: event:/Music/Cityamb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: BuildingAnimationOn
       value: 
       objectReference: {fileID: 1551427380}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: KajiuSoundEvent.Path
+      value: event:/Birds/Birdkaiju
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Cityambience.Guid.Data1
+      value: 1376728186
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Cityambience.Guid.Data2
+      value: 1236305267
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Cityambience.Guid.Data3
+      value: 22919832
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Cityambience.Guid.Data4
+      value: -556186528
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: KajiuSoundEvent.Guid.Data1
+      value: -1716221610
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: KajiuSoundEvent.Guid.Data2
+      value: 1340397832
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: KajiuSoundEvent.Guid.Data3
+      value: 974531494
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: KajiuSoundEvent.Guid.Data4
+      value: 612980161
+      objectReference: {fileID: 0}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: 'objectsToMonitor.Array.data[0]'
       value: 
