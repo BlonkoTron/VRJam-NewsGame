@@ -206,7 +206,7 @@ public class GamePlayLoop : MonoBehaviour
         yield return new WaitForSeconds(thirdTimerDuration);
         Kajiu();
         NewsMan_6 = Audiomanager.instance.PlaySound(NewsMan_6Event, transform.position);
-        KajiuSound = Audiomanager.instance.PlaySound(KajiuSoundEvent, transform.position);
+        KajiuSound = Audiomanmove.instance.PlaySound(KajiuSoundEvent, transform.position);
 
         yield return new WaitForSeconds(TakenByBird);
         NewsMan_7 = Audiomanager.instance.PlaySound(NewsMan_7Event, transform.position);

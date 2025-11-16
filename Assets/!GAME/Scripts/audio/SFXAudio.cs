@@ -19,9 +19,17 @@ public class NPC_Soundmanager : MonoBehaviour
 
     public bool test;
 
+    private void Update()
+    {
+        if (test)
+        {
+            storys();
+            test = false;
+        }
+    }
     public void storys()
     {
-        VoiceLine_1 = Audiomanager.instance.PlaySound(AudioLine_1, transform.position);
+        VoiceLine_1 = Audiomanmove.instance.PlaySound(AudioLine_1, transform.position);
     }
 
     public void Endstorys()
