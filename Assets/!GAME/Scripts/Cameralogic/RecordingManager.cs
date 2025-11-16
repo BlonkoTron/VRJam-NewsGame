@@ -91,15 +91,26 @@ public class RecordingManager : MonoBehaviour
     //HERE MR BENJAMIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHH
     public void CheckBatteryState()
     {
-        Debug.Log("Checking Battery State");
-        if (batteryState.battery_1 && batteryState.battery_2 && checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife > 0)
+        if (checkAttachedBattery.currentBattery != null)
         {
-            canRecord = true;
-            Debug.Log("Can Record: " + canRecord);
-            if (batteryWarning.activeSelf)
+            Debug.Log("Checking Battery State");
+            if (batteryState.battery_1 && batteryState.battery_2 && checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife > 0)
             {
-                DeactivateGameObject(batteryWarning);
-                Debug.Log("Battery Warning Deactivated");
+                canRecord = true;
+                Debug.Log("Can Record: " + canRecord);
+                if (batteryWarning.activeSelf)
+                {
+                    DeactivateGameObject(batteryWarning);
+                    Debug.Log("Battery Warning Deactivated");
+                }
+            }
+            else
+            {
+                canRecord = false;
+                if (!batteryWarning.activeSelf)
+                {
+                    ActivateGameObject(batteryWarning);
+                }
             }
         }
         else
@@ -114,7 +125,7 @@ public class RecordingManager : MonoBehaviour
 
     public void UpdateBatteryLevel()
     {
-        if (batteryState.battery_1 && batteryState.battery_2)
+        if (batteryState.battery_1 && batteryState.battery_2 && checkAttachedBattery.currentBattery != null)
         {
             batterySlider.value = checkAttachedBattery.currentBattery.GetComponent<Batterydrain>().BatteryLife;
 
