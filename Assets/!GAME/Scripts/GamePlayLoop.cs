@@ -17,7 +17,11 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] public float secondTimerDuration = 17.5f; // Duration for second timer
     [SerializeField] public float thirdTimerDuration = 34.5f;
 
+    [SerializeField] public float EndingDelay = 2f;
+
     [SerializeField] public float TakenByBird = 18f;
+
+    [SerializeField] public float BackToStudio = 3f;
 
     [SerializeField] public float NewsIntroStart = 10f;
     [SerializeField] public GameObject objectToDisable;
@@ -39,6 +43,7 @@ public class GamePlayLoop : MonoBehaviour
     private EventInstance NewsMan_5;
     private EventInstance NewsMan_6;
     private EventInstance NewsMan_7;
+    private EventInstance NewsMan_8;
     private EventInstance KajiuSound;
 
     [SerializeField] private EventReference NewsMan_1Event;
@@ -52,6 +57,7 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] private EventReference NewsMan_5Event;
     [SerializeField] private EventReference NewsMan_6Event;
     [SerializeField] private EventReference NewsMan_7Event;
+    [SerializeField] private EventReference NewsMan_8Event;
 
     private float lastPointsValue = 0f;
     private bool pointsSoundPlayed = false;
@@ -204,7 +210,13 @@ public class GamePlayLoop : MonoBehaviour
 
         yield return new WaitForSeconds(TakenByBird);
         NewsMan_7 = Audiomanager.instance.PlaySound(NewsMan_7Event, transform.position);
-        
+
+        yield return new WaitForSeconds(BackToStudio);
+        NewsMan_8 = Audiomanager.instance.PlaySound(NewsMan_8Event, transform.position);
+
+        yield return new WaitForSeconds(EndingDelay);
+        TransitionController.Instance.FadeToEndScene();
+
     }
 
     private void Kajiu()
@@ -243,4 +255,5 @@ public class GamePlayLoop : MonoBehaviour
     {
         animationTriggered = false;
     }
+
 }
