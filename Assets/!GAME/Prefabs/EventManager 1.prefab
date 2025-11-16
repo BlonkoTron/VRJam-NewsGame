@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8965771675346441045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6811913825425850326}
+  - component: {fileID: 7452599505020257856}
+  m_Layer: 0
+  m_Name: EventManager 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6811913825425850326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965771675346441045}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.028836, y: -1.3209126, z: 6.9259214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7452599505020257856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965771675346441045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560843bde2542bb4194671fffec437c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToMonitor:
+  - {fileID: 0}
+  animator: {fileID: 0}
+  allObjectsDisabledParameterName: ProtestersGone
+  animationStateName: LookAtMayor
+  animationParameterName: AnimationComplete
+  pointsParameterName: Points
+  TalkBeforeMayor: 22
+  animationDuration: 67.5
+  secondTimerDuration: 19.5
+  thirdTimerDuration: 37.5
+  EndingDelay: 2
+  TakenByBird: 16
+  BackToStudio: 9
+  NewsIntroStart: 10
+  objectToDisable: {fileID: 0}
+  objectToEnable: {fileID: 0}
+  BirdAnimationOff: {fileID: 0}
+  HouseAnimationON: {fileID: 0}
+  Door: {fileID: 0}
+  KajiuAnimation: {fileID: 0}
+  birdSpawner: {fileID: 0}
+  mayorObject: {fileID: 0}
+  NewsMan_1Event:
+    Guid:
+      Data1: 696914340
+      Data2: 1107455499
+      Data3: 1446917011
+      Data4: 1907542827
+    Path: event:/Newsguy/newsguy_1
+  NewsMan_2Event:
+    Guid:
+      Data1: -735086524
+      Data2: 1249104414
+      Data3: -168656477
+      Data4: -91684465
+    Path: event:/Newsguy/newsguy_3
+  NewsMan_3Event:
+    Guid:
+      Data1: -177978883
+      Data2: 1163944018
+      Data3: -654197117
+      Data4: 1104494111
+    Path: event:/Newsguy/newsguy_4
+  PointsSoundEvent:
+    Guid:
+      Data1: 2025724266
+      Data2: 1268464879
+      Data3: 242292662
+      Data4: -1368547566
+    Path: event:/Newsguy/newsguy_2
+  MayorTalkEvent:
+    Guid:
+      Data1: 1190986352
+      Data2: 1216418829
+      Data3: 48331904
+      Data4: -1372584984
+    Path: event:/Evilguy/Evilguy_2
+  KajiuSoundEvent:
+    Guid:
+      Data1: 1910799984
+      Data2: 1206728330
+      Data3: 2086361498
+      Data4: -125177474
+    Path: event:/Birds/Kaijubird
+  NewsMan_4Event:
+    Guid:
+      Data1: -1076704797
+      Data2: 1319304019
+      Data3: -1678276730
+      Data4: 1488954050
+    Path: event:/Newsguy/newsguy_6
+  NewsMan_5Event:
+    Guid:
+      Data1: 277843545
+      Data2: 1208854530
+      Data3: 447852673
+      Data4: -1467913465
+    Path: event:/Newsguy/newsguy_7
+  NewsMan_6Event:
+    Guid:
+      Data1: -43946720
+      Data2: 1186771702
+      Data3: -518510162
+      Data4: -1923059744
+    Path: event:/Newsguy/newsguy_8
+  NewsMan_7Event:
+    Guid:
+      Data1: 325684009
+      Data2: 1115807155
+      Data3: 40455829
+      Data4: -1131500591
+    Path: event:/Newsguy/newsguy_10
+  NewsMan_8Event:
+    Guid:
+      Data1: -1035613419
+      Data2: 1237941377
+      Data3: 349229718
+      Data4: 1401122089
+    Path: event:/Newsguy/newsguy_11

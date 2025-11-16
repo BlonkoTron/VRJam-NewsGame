@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
 
 public class LensInteraction : MonoBehaviour
 {
@@ -31,6 +33,9 @@ public class LensInteraction : MonoBehaviour
     
     private bool isRunning = false;
     private Coroutine cycleCoroutine;
+
+    private EventInstance Campop;
+    [SerializeField] private EventReference Campopper;
 
     void Start()
     {
@@ -136,7 +141,8 @@ public class LensInteraction : MonoBehaviour
             
             // Disable the script
             scriptToDisable.enabled = false;
-            
+            Campop = Audiomanmove.instance.PlaySound(Campopper, transform.position);
+
             if (debugMode)
             {
                 Debug.Log($"Script disabled for {disabledDuration:F2} seconds");
