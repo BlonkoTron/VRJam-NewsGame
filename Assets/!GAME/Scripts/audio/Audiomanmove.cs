@@ -31,6 +31,11 @@ public class Audiomanmove : MonoBehaviour
         instance.release();
     }
 
+    public void UpdateSoundPosition(EventInstance instance, Vector3 position)
+    {
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+    }
+
     public void PauseSound(EventInstance instance, bool pause)
     {
         instance.setPaused(pause);
