@@ -7,7 +7,7 @@ public class Trashcan : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject trashThrowablePrefab;
     private GameObject myCan;
-    private float timeToRespawnCan = 5f;
+    [SerializeField] private float timeToRespawnCan = 2f;
 
     private void Start()
     {
