@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxHalfExtents: {x: 0.5, y: 0.5, z: 0.5}
-  maxDistance: 10
+  maxDistance: 40
   hitDistance: 0
   currentPoints: 0
   recordingManager: {fileID: 8803589873582066548}
@@ -6130,8 +6130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptToDisable: {fileID: 5028442668990478339}
-  minEnabledTime: 25
-  maxEnabledTime: 30
+  minEnabledTime: 50
+  maxEnabledTime: 80
   minDisableTime: 2
   maxDisableTime: 2
   useRandomTime: 1
