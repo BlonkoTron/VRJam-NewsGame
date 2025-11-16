@@ -77,6 +77,6 @@ public class AnimationToRagdoll : MonoBehaviour
 
     private void OnDestroy()
     {
-
+        ProtesterHivemind.Instance.checkDeadProtesters();
     }
 }

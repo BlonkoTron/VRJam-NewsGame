@@ -21,8 +21,9 @@ public class CheckAttachedBattery : MonoBehaviour
         {
             if (currentBattery == other.gameObject)
             {
-                recordingManager.CheckBatteryState();
                 currentBattery = null;
+                recordingManager.CheckBatteryState();
+                
             }
         }
     }

@@ -315,7 +315,7 @@ MonoBehaviour:
   - {fileID: 0}
   materials: []
   attackerSpawner: {fileID: 5830682016734635752}
-  despawnThreshold: 10
+  despawnThreshold: 5
 --- !u!1 &7759296605656150910
 GameObject:
   m_ObjectHideFlags: 0

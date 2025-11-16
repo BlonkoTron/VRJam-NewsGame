@@ -57,8 +57,5 @@ public class AttackingProtester : ProtesterBehaviour
         {
             agent.SetDestination(new Vector3(camTransform.position.x, transform.position.y, camTransform.position.z));
         }
-            
-        
-
     }
 }
