@@ -34061,11 +34061,11 @@ MonoBehaviour:
     Path: event:/Newsguy/newsguy_2
   MayorTalkEvent:
     Guid:
-      Data1: -39901835
-      Data2: 1098706200
-      Data3: -584517755
-      Data4: -1333912241
-    Path: event:/Evilguy/Evilguy_1
+      Data1: 1190986352
+      Data2: 1216418829
+      Data3: 48331904
+      Data4: -1372584984
+    Path: event:/Evilguy/Evilguy_2
   KajiuSoundEvent:
     Guid:
       Data1: 1910799984
