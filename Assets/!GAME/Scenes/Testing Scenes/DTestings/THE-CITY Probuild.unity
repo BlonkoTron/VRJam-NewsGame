@@ -34016,6 +34016,7 @@ MonoBehaviour:
   Door: {fileID: 1630096992}
   KajiuAnimation: {fileID: 43136950}
   birdSpawner: {fileID: 1720540621}
+  mayorObject: {fileID: 1703517920}
   NewsMan_1Event:
     Guid:
       Data1: 696914340
@@ -69001,6 +69002,10 @@ PrefabInstance:
       value: EVILBIRDMANJoined
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f59f3d9212caa9b4e9fc9ea63bd82b91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f59f3d9212caa9b4e9fc9ea63bd82b91, type: 3}
       propertyPath: m_TagString
       value: Points
       objectReference: {fileID: 0}
@@ -87131,7 +87136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2049272756774683226, guid: 141d36dec1b803d4eb9868c57ad08920, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.60513425
+      value: -0.6051342
       objectReference: {fileID: 0}
     - target: {fileID: 2049272756774683226, guid: 141d36dec1b803d4eb9868c57ad08920, type: 3}
       propertyPath: m_LocalRotation.w
