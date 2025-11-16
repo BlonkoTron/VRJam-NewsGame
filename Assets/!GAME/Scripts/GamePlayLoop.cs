@@ -191,6 +191,8 @@ public class GamePlayLoop : MonoBehaviour
         NewsMan_2 = Audiomanager.instance.PlaySound(NewsMan_2Event, transform.position);
         
         yield return new WaitForSeconds(TalkBeforeMayor);
+
+        Audiomanmove.instance.PauseSound(Cityamb, true);
         Audiomanager.instance.PlaySound(MayorTalkEvent, transform.position);
         birdSpawner.SetActive(true);
         mayorObject.SetActive(true);
