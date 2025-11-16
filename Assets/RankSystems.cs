@@ -3,6 +3,7 @@ using UnityEngine.Video;
 using FMODUnity;
 using FMOD.Studio;
 using System.Collections.Generic;
+using System.Collections;
 
 [System.Serializable]
 public class RankEntry
@@ -34,8 +35,6 @@ public class RankSystems : MonoBehaviour
     public bool useManualPoints = false;
     public float manualPoints = 0f;
 
-    public bool test;
-
     private RankEntry finalRank = null;
     private bool hasPlayed = false;
 
@@ -60,16 +59,10 @@ public class RankSystems : MonoBehaviour
         }
 
         videoPlayer.loopPointReached += OnVideoFinished;
-    }
 
-    void Update()
-    {
-        if (test)
-        {
-            test = false;
-            EvaluateRank();
-            PlayFinalRank();
-        }
+
+        StartCoroutine(Wait());
+
     }
 
     public void EvaluateRank()
@@ -118,4 +111,14 @@ public class RankSystems : MonoBehaviour
 
         hasPlayed = false;
     }
+
+    private IEnumerator Wait()
+    {
+
+        yield return new WaitForSeconds(3); //jeg ved godt der er et magic number men fuck dig :^)
+
+        EvaluateRank();
+        PlayFinalRank();
+    }
+
 }
