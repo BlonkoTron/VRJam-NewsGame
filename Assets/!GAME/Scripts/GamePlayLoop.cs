@@ -63,6 +63,9 @@ public class GamePlayLoop : MonoBehaviour
     private bool pointsSoundPlayed = false;
 
     private bool NextSequenceStarted = false;
+
+    public Animator BuildingAnimationOn;
+    public GameObject Glorbonko;
     
     
     private bool animationTriggered = false;
@@ -225,6 +228,7 @@ public class GamePlayLoop : MonoBehaviour
         Door.SetActive(false);
         KajiuAnimation.SetActive(true);
         birdSpawner.SetActive(false);
+        BuildingAnimationOn.SetBool("Kajiu", true);
     }
 
     private void BulidingAnimationOn()
@@ -233,6 +237,7 @@ public class GamePlayLoop : MonoBehaviour
         {
             HouseAnimationON.SetActive(true);
             objectToEnable.SetActive(false);
+            Glorbonko.SetActive(true);
         }
     }
 

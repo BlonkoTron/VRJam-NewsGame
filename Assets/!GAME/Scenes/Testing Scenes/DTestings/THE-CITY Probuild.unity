@@ -59655,6 +59655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrolbonkoTaxi
       objectReference: {fileID: 0}
+    - target: {fileID: 3379081224417752680, guid: fbb7cd9b17220394d82e61babf318779, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3417493137156663951, guid: fbb7cd9b17220394d82e61babf318779, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -88296,6 +88300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 159549215}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Glorbonko
+      value: 
+      objectReference: {fileID: 2011348762}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: birdSpawner
       value: 
       objectReference: {fileID: 1720540621}
@@ -88303,6 +88311,10 @@ PrefabInstance:
       propertyPath: mayorObject
       value: 
       objectReference: {fileID: 1703517920}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: BackToStudio
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: KajiuAnimation
       value: 
@@ -88323,6 +88335,10 @@ PrefabInstance:
       propertyPath: HouseAnimationON
       value: 
       objectReference: {fileID: 619721004}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: BuildingAnimationOn
+      value: 
+      objectReference: {fileID: 1551427380}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: 'objectsToMonitor.Array.data[0]'
       value: 
