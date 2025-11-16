@@ -8718,19 +8718,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
       propertyPath: ranks.Array.data[2].pointThreshold
-      value: 5500
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
       propertyPath: ranks.Array.data[3].pointThreshold
-      value: 4500
+      value: 3500
       objectReference: {fileID: 0}
     - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
       propertyPath: ranks.Array.data[4].pointThreshold
-      value: 3000
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
       propertyPath: ranks.Array.data[5].pointThreshold
-      value: 1500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
       propertyPath: ranks.Array.data[6].pointThreshold
