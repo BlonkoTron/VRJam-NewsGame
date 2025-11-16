@@ -28,6 +28,8 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField] public GameObject Door;
     [SerializeField] public GameObject KajiuAnimation;
 
+    public GameObject birdSpawner;
+
 
     private EventInstance NewsMan_1;
     private EventInstance NewsMan_2;
@@ -35,7 +37,6 @@ public class GamePlayLoop : MonoBehaviour
     private EventInstance NewsMan_4;
     private EventInstance NewsMan_5;
     private EventInstance NewsMan_6;
-
     private EventInstance NewsMan_7;
 
     [SerializeField] private EventReference NewsMan_1Event;
@@ -169,6 +170,7 @@ public class GamePlayLoop : MonoBehaviour
         
         yield return new WaitForSeconds(TalkBeforeMayor);
         Audiomanager.instance.PlaySound(MayorTalkEvent, transform.position);
+        birdSpawner.SetActive(true);
         
 
         yield return new WaitForSeconds(animationDuration);
@@ -198,6 +200,7 @@ public class GamePlayLoop : MonoBehaviour
         HouseAnimationON.SetActive(false);
         Door.SetActive(false);
         KajiuAnimation.SetActive(true);
+        birdSpawner.SetActive(false);
     }
 
     private void BulidingAnimationOn()
