@@ -25,7 +25,7 @@ public class BirdFollowPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         if (target==null)
         {
-            target = Camera.main.transform;
+            target = FindAnyObjectByType<PointsRayCast>().gameObject.transform;
         }
         Birdespawn = Audiomanager.instance.PlaySound(Birderspawn_1, transform.position);
     }

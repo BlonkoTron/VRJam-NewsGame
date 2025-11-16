@@ -7,30 +7,33 @@ public class BirdSpawner : MonoBehaviour
     [SerializeField] private Vector3 spawnCubeSize = Vector3.one;
 
     [Header("Timing (seconds)")]
-    public float initialDelay = 5f;
     public float minSpawnInterval = 2f;
     public float maxSpawnInterval = 5f;
+    public float minSpawnIntervalPhase2 = 2f;
+    public float maxSpawnIntervalPhase2 = 5f;
 
-    private bool isSpawning = false;
+    public bool isSpawningPhase2 = false;
 
     private void Awake()
     {
-        isSpawning = false;
+        isSpawningPhase2 = false;
         StartCoroutine(SpawnRoutine());
     }
 
     private IEnumerator SpawnRoutine()
     {
 
-        if (!isSpawning)
-        {
-            isSpawning = true;
-            yield return new WaitForSeconds(initialDelay);
-        }
-
-        while (isSpawning)
+        while (!isSpawningPhase2)
         {
             float waitTime = Random.Range(minSpawnInterval, maxSpawnInterval);
+            yield return new WaitForSeconds(waitTime);
+
+            SpawnBird();
+        }
+
+        while (isSpawningPhase2)
+        {
+            float waitTime = Random.Range(minSpawnIntervalPhase2, maxSpawnIntervalPhase2);
             yield return new WaitForSeconds(waitTime);
 
             SpawnBird();

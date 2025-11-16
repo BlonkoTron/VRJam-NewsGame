@@ -8708,6 +8708,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[0].pointThreshold
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[1].pointThreshold
+      value: 6500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[2].pointThreshold
+      value: 5500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[3].pointThreshold
+      value: 4500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[4].pointThreshold
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[5].pointThreshold
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183863441488370013, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
+      propertyPath: ranks.Array.data[6].pointThreshold
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1394834624912985721, guid: c3bc17dcc12b20b48937e47b34fa5263, type: 3}
       propertyPath: m_Name
       value: PointEndSequence

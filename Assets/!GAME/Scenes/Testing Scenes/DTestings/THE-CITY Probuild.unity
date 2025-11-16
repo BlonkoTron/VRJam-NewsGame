@@ -2223,6 +2223,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2145302866509392575, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Campopper.Path
+      value: event:/SFX/Campop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145302866509392575, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Campopper.Guid.Data1
+      value: 1708027762
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145302866509392575, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Campopper.Guid.Data2
+      value: 1326124026
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145302866509392575, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Campopper.Guid.Data3
+      value: -478882887
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145302866509392575, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Campopper.Guid.Data4
+      value: -1294202871
+      objectReference: {fileID: 0}
     - target: {fileID: 2675724156240606921, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
       propertyPath: m_ClearFlags
       value: 1
@@ -2290,6 +2310,26 @@ PrefabInstance:
     - target: {fileID: 8631841718830022792, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Batterydeadsound.Path
+      value: event:/SFX/batterydead
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Batterydeadsound.Guid.Data1
+      value: -342850715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Batterydeadsound.Guid.Data2
+      value: 1126501977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Batterydeadsound.Guid.Data3
+      value: 303987647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803589873582066548, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: Batterydeadsound.Guid.Data4
+      value: 290784491
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59615,6 +59655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrolbonkoTaxi
       objectReference: {fileID: 0}
+    - target: {fileID: 3379081224417752680, guid: fbb7cd9b17220394d82e61babf318779, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3417493137156663951, guid: fbb7cd9b17220394d82e61babf318779, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -88256,6 +88300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 159549215}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: Glorbonko
+      value: 
+      objectReference: {fileID: 2011348762}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: birdSpawner
       value: 
       objectReference: {fileID: 1720540621}
@@ -88263,6 +88311,10 @@ PrefabInstance:
       propertyPath: mayorObject
       value: 
       objectReference: {fileID: 1703517920}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: BackToStudio
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: KajiuAnimation
       value: 
@@ -88283,6 +88335,10 @@ PrefabInstance:
       propertyPath: HouseAnimationON
       value: 
       objectReference: {fileID: 619721004}
+    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
+      propertyPath: BuildingAnimationOn
+      value: 
+      objectReference: {fileID: 1551427380}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: 'objectsToMonitor.Array.data[0]'
       value: 
