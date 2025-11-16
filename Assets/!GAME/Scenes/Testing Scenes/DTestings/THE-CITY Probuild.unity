@@ -34103,11 +34103,11 @@ MonoBehaviour:
     Path: event:/Newsguy/newsguy_10
   NewsMan_8Event:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1035613419
+      Data2: 1237941377
+      Data3: 349229718
+      Data4: 1401122089
+    Path: event:/Newsguy/newsguy_11
 --- !u!4 &1086195484
 Transform:
   m_ObjectHideFlags: 0
