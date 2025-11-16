@@ -77,28 +77,35 @@ public class GamePlayLoop : MonoBehaviour
         // Exit early if no animator assigned
         if (!animator) return;
         
-        // Check if points parameter changed to greater than zero
-        float currentPoints = animator.GetFloat(pointsParameterName);
-        if (!pointsSoundPlayed && currentPoints > 0f && lastPointsValue == 0f)
+        // Check if points from PointManager changed to greater than zero
+        if (PointManager.Instance != null)
         {
-            // Enable all objects to monitor and set NextSequenceStarted once
-            if (!NextSequenceStarted && objectsToMonitor != null && objectsToMonitor.Length > 0)
-            {
-                foreach (GameObject obj in objectsToMonitor)
-                {
-                    if (obj != null)
-                    {
-                        obj.SetActive(true);
-                    }
-                }
-                NextSequenceStarted = true;
-            }
+            float currentPoints = PointManager.Instance.totalPoints;
             
-            Audiomanager.instance.PlaySound(PointsSoundEvent, transform.position);
-            pointsSoundPlayed = true;
-            UnityEngine.Debug.Log($"<color=green>Points sound played! Points: {currentPoints}</color>");
+            // Update animator parameter with current points
+            animator.SetFloat(pointsParameterName, currentPoints);
+            
+            if (!pointsSoundPlayed && currentPoints > 0f && lastPointsValue == 0f)
+            {
+                // Enable all objects to monitor and set NextSequenceStarted once
+                if (!NextSequenceStarted && objectsToMonitor != null && objectsToMonitor.Length > 0)
+                {
+                    foreach (GameObject obj in objectsToMonitor)
+                    {
+                        if (obj != null)
+                        {
+                            obj.SetActive(true);
+                        }
+                    }
+                    NextSequenceStarted = true;
+                }
+                
+                Audiomanager.instance.PlaySound(PointsSoundEvent, transform.position);
+                pointsSoundPlayed = true;
+                UnityEngine.Debug.Log($"<color=green>Points sound played! Points: {currentPoints}</color>");
+            }
+            lastPointsValue = currentPoints;
         }
-        lastPointsValue = currentPoints;
         
         // Update the animator parameter based on object states
         bool allDisabled = AreAllObjectsDisabled();
