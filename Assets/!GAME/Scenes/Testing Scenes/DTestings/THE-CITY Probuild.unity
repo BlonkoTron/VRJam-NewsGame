@@ -1116,11 +1116,19 @@ PrefabInstance:
       objectReference: {fileID: 1140566193}
     - target: {fileID: 666047172202175796, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.83
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 666047172202175796, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.92
+      value: 9.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928142156604725537, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928142156604725537, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2043911988397331826, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1132,19 +1140,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2684908926098141415, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.35
+      value: -4.48
       objectReference: {fileID: 0}
     - target: {fileID: 2684908926098141415, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.38
+      value: 6.76
       objectReference: {fileID: 0}
     - target: {fileID: 3878381922375106421, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.31
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 3878381922375106421, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.5499997
+      value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: 4127374794753984343, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_Enabled
@@ -1152,11 +1160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996285804505385160, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4069996
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 4996285804505385160, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.794001
+      value: 7.31
       objectReference: {fileID: 0}
     - target: {fileID: 5570655419444941937, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2202,6 +2210,10 @@ PrefabInstance:
     - target: {fileID: 435243610506241685, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675724156240606921, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5006315723434792485, guid: cd81a91c9c6fd694cb806020a6743cd7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -34007,7 +34019,9 @@ MonoBehaviour:
   animationDuration: 67.5
   secondTimerDuration: 19.5
   thirdTimerDuration: 37.5
+  EndingDelay: 2
   TakenByBird: 16
+  BackToStudio: 3
   NewsIntroStart: 10
   objectToDisable: {fileID: 159549213}
   objectToEnable: {fileID: 8896340549310226500}
@@ -34087,6 +34101,13 @@ MonoBehaviour:
       Data3: 40455829
       Data4: -1131500591
     Path: event:/Newsguy/newsguy_10
+  NewsMan_8Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1086195484
 Transform:
   m_ObjectHideFlags: 0
