@@ -11773,7 +11773,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &598480789
 Transform:
@@ -61282,7 +61282,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1481770385
 MeshCollider:
@@ -63473,23 +63473,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1524942813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5257695245025534638, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
-  m_PrefabInstance: {fileID: 4300079711627592923}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1524942816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524942813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e94c6e76f57941a439fc7354ba5c0227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1534237367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64137,7 +64120,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1551427374
 MeshCollider:
@@ -80067,7 +80050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 273c3e8c4295e8742b0724c5d5a636fe, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88369,10 +88352,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1703517920}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: BackToStudio
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: KajiuAnimation
       value: 
       objectReference: {fileID: 43136950}
@@ -88393,49 +88372,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 619721004}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: Cityambience.Path
-      value: event:/Music/Cityamb
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: BuildingAnimationOn
       value: 
       objectReference: {fileID: 1551427380}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: KajiuSoundEvent.Path
-      value: event:/Birds/Birdkaiju
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: Cityambience.Guid.Data1
-      value: 1376728186
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: Cityambience.Guid.Data2
-      value: 1236305267
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: Cityambience.Guid.Data3
-      value: 22919832
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: Cityambience.Guid.Data4
-      value: -556186528
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: KajiuSoundEvent.Guid.Data1
-      value: -1716221610
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: KajiuSoundEvent.Guid.Data2
-      value: 1340397832
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: KajiuSoundEvent.Guid.Data3
-      value: 974531494
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
-      propertyPath: KajiuSoundEvent.Guid.Data4
-      value: 612980161
-      objectReference: {fileID: 0}
     - target: {fileID: 7452599505020257856, guid: 3d0d6b0242e6ff94cb957e83762aeea4, type: 3}
       propertyPath: 'objectsToMonitor.Array.data[0]'
       value: 
@@ -88525,21 +88464,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2193268486996588952, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3501806487916709129, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
       propertyPath: m_Name
       value: DoorAnimation
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501806487916709129, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5257695245025534638, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089551658590057263, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88584,10 +88511,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5257695245025534638, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1524942816}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a44ca5f65ec2c049ade66c36bbe544a, type: 3}
 --- !u!1 &6578242174207278522
 GameObject:
