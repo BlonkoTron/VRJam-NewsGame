@@ -33993,6 +33993,7 @@ MonoBehaviour:
   HouseAnimationON: {fileID: 619721004}
   Door: {fileID: 1630096992}
   KajiuAnimation: {fileID: 43136950}
+  birdSpawner: {fileID: 1720540621}
   NewsMan_1Event:
     Guid:
       Data1: 696914340
@@ -69476,6 +69477,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 317e853eb218821449d13f9a0954d283, type: 3}
+--- !u!1 &1720540621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8768397582110209979, guid: 317e853eb218821449d13f9a0954d283, type: 3}
+  m_PrefabInstance: {fileID: 1720540620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722854238
 GameObject:
   m_ObjectHideFlags: 0
