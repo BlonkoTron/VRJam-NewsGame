@@ -2,28 +2,44 @@ using UnityEngine;
 
 public class CheckAttachedBattery : MonoBehaviour
 {
-    public GameObject currentBattery;
+    public GameObject currentTopBattery;
+    public GameObject currentBottomBattery;
+    public bool isTopBattery;
+    public bool isBottomBattery;
     public RecordingManager recordingManager;
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Battery"))
+        if (other.gameObject.CompareTag("Battery") && isTopBattery)
         {
-            currentBattery = other.gameObject;
+            currentTopBattery = other.gameObject;
+            recordingManager.CheckBatteryState();
+        }
+        else if (other.gameObject.CompareTag("Battery") && isBottomBattery)
+        {
+            currentBottomBattery = other.gameObject;
             recordingManager.CheckBatteryState();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Battery"))
+        if (other.gameObject.CompareTag("Battery") && isTopBattery)
         {
-            if (currentBattery == other.gameObject)
+            if (currentTopBattery == other.gameObject)
             {
-                currentBattery = null;
+                currentTopBattery = null;
                 recordingManager.CheckBatteryState();
                 
+            }
+        }
+        else if (other.gameObject.CompareTag("Battery") && isBottomBattery)
+        {
+            if (currentBottomBattery == other.gameObject)
+            {
+                currentBottomBattery = null;
+                recordingManager.CheckBatteryState();
             }
         }
     }

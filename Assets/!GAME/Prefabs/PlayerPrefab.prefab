@@ -6894,6 +6894,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7584249525482145775, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3254350962092879839}
+    - targetCorrespondingSourceObject: {fileID: 3210525496746562098, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3529885342562210497}
   m_SourcePrefab: {fileID: 100100000, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
 --- !u!114 &2617437665501078986 stripped
 MonoBehaviour:
@@ -6927,7 +6930,7 @@ MonoBehaviour:
   m_TransformationPriority: 0
   m_MoveSpeed: 1
   m_InAirControlModifier: 0.5
-  m_EnableStrafe: 1
+  m_EnableStrafe: 0
   m_EnableFly: 0
   m_ForwardSource: {fileID: 7972401864767668677}
   m_LeftHandMoveInput:
@@ -7062,6 +7065,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3174704252062334336, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
   m_PrefabInstance: {fileID: 162634100901537471}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3373153479314912397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3210525496746562098, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+  m_PrefabInstance: {fileID: 162634100901537471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3529885342562210497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373153479314912397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cc73c9ac5b63447a798d773cf6086d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTopBattery: {fileID: 0}
+  currentBottomBattery: {fileID: 0}
+  isTopBattery: 1
+  isBottomBattery: 0
+  recordingManager: {fileID: 8803589873582066548}
 --- !u!114 &3885838916491901334 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4011738814794604329, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
@@ -7100,7 +7125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8cc73c9ac5b63447a798d773cf6086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBattery: {fileID: 0}
+  currentTopBattery: {fileID: 0}
+  currentBottomBattery: {fileID: 0}
+  isTopBattery: 0
+  isBottomBattery: 1
   recordingManager: {fileID: 8803589873582066548}
 --- !u!1 &7805758358710231823 stripped
 GameObject:

@@ -57,7 +57,7 @@ MonoBehaviour:
   thirdTimerDuration: 37.5
   EndingDelay: 2
   TakenByBird: 16
-  BackToStudio: 9
+  BackToStudio: 12
   NewsIntroStart: 10
   objectToDisable: {fileID: 0}
   objectToEnable: {fileID: 0}
@@ -104,11 +104,18 @@ MonoBehaviour:
     Path: event:/Evilguy/Evilguy_2
   KajiuSoundEvent:
     Guid:
-      Data1: 1910799984
-      Data2: 1206728330
-      Data3: 2086361498
-      Data4: -125177474
-    Path: event:/Birds/Kaijubird
+      Data1: -1716221610
+      Data2: 1340397832
+      Data3: 974531494
+      Data4: 612980161
+    Path: event:/Birds/Birdkaiju
+  Cityambience:
+    Guid:
+      Data1: 1376728186
+      Data2: 1236305267
+      Data3: 22919832
+      Data4: -556186528
+    Path: event:/Music/Cityamb
   NewsMan_4Event:
     Guid:
       Data1: -1076704797
@@ -144,3 +151,5 @@ MonoBehaviour:
       Data3: 349229718
       Data4: 1401122089
     Path: event:/Newsguy/newsguy_11
+  BuildingAnimationOn: {fileID: 0}
+  Glorbonko: {fileID: 0}
