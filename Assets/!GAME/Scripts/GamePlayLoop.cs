@@ -236,7 +236,7 @@ public class GamePlayLoop : MonoBehaviour
         Door.SetActive(false);
         KajiuAnimation.SetActive(true);
         birdSpawner.SetActive(false);
-        BuildingAnimationOn.SetBool("Kajiu", true);
+        BuildingAnimationOn.SetBool("Kaiju", true);
     }
 
     private void BulidingAnimationOn()
