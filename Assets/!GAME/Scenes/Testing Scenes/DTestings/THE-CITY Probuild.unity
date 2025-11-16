@@ -34019,7 +34019,9 @@ MonoBehaviour:
   animationDuration: 67.5
   secondTimerDuration: 19.5
   thirdTimerDuration: 37.5
+  EndingDelay: 2
   TakenByBird: 16
+  BackToStudio: 3
   NewsIntroStart: 10
   objectToDisable: {fileID: 159549213}
   objectToEnable: {fileID: 8896340549310226500}
@@ -34099,6 +34101,13 @@ MonoBehaviour:
       Data3: 40455829
       Data4: -1131500591
     Path: event:/Newsguy/newsguy_10
+  NewsMan_8Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1086195484
 Transform:
   m_ObjectHideFlags: 0
