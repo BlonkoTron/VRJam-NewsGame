@@ -50,7 +50,7 @@ public class EndSequneceController : MonoBehaviour
             startPoints = true;
             yield return new WaitForSeconds(initialDelay);
 
-            EndCanvas.SetActive(true);
+            EndCanvas.SetActive(true);                                                                                  
 
         }
 
