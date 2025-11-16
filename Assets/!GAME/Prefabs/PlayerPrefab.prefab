@@ -715,6 +715,13 @@ MonoBehaviour:
   checkAttachedBattery: {fileID: 3254350962092879839}
   lensWarning: {fileID: 5088179813858977325}
   batteryWarning: {fileID: 6881987323505672366}
+  Batterydeadsound:
+    Guid:
+      Data1: -342850715
+      Data2: 1126501977
+      Data3: 303987647
+      Data4: 290784491
+    Path: event:/SFX/batterydead
 --- !u!114 &7566197559594774123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6109,7 +6116,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -6137,6 +6144,13 @@ MonoBehaviour:
   useRandomTime: 1
   autoStart: 1
   debugMode: 1
+  Campopper:
+    Guid:
+      Data1: 1708027762
+      Data2: 1326124026
+      Data3: -478882887
+      Data4: -1294202871
+    Path: event:/SFX/Campop
 --- !u!114 &5028442668990478339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6561,6 +6575,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2165802748511039630, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 2415767346246819948, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -6713,6 +6731,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5993133311121646174, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 6236709017923045494, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -6740,6 +6762,10 @@ PrefabInstance:
     - target: {fileID: 6364638708590759274, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 16.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530443870844091709, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 6551181016157385257, guid: 823d7d0b85cc998428e0c1cafd18d040, type: 3}
       propertyPath: m_Layer
