@@ -34022,6 +34022,7 @@ MonoBehaviour:
   Door: {fileID: 1630096992}
   KajiuAnimation: {fileID: 43136950}
   birdSpawner: {fileID: 1720540621}
+  mayorObject: {fileID: 0}
   NewsMan_1Event:
     Guid:
       Data1: 696914340
@@ -34057,6 +34058,13 @@ MonoBehaviour:
       Data3: -584517755
       Data4: -1333912241
     Path: event:/Evilguy/Evilguy_1
+  KajiuSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   NewsMan_4Event:
     Guid:
       Data1: -1076704797
