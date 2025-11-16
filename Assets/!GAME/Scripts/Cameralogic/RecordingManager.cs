@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -22,6 +24,9 @@ public class RecordingManager : MonoBehaviour
     
     public GameObject lensWarning;
     public GameObject batteryWarning;
+
+    private EventInstance Batterysound;
+    [SerializeField] private EventReference Batterydeadsound;
 
     void Awake()
     {
@@ -110,6 +115,7 @@ public class RecordingManager : MonoBehaviour
                 if (!batteryWarning.activeSelf)
                 {
                     ActivateGameObject(batteryWarning);
+                    Batterysound = Audiomanmove.instance.PlaySound(Batterydeadsound, transform.position);
                 }
             }
         }
