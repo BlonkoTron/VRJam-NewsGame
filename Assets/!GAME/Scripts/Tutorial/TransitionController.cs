@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 public class TransitionController : MonoBehaviour
 {
     public static TransitionController Instance;
@@ -63,6 +64,27 @@ public class TransitionController : MonoBehaviour
             yield return null;
         }
         OnFadeOutEnd.Invoke();
+    }
+    public void FadeToEndScene()
+    {
+        OnFadeOutEnd.AddListener(GotoEndScene);
+        FadeOut();
+    }
+
+    private void GotoEndScene()
+    {
+        TransitionController.Instance.OnFadeOutEnd.RemoveListener(GotoEndScene);
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        Debug.Log("scene" + nextSceneIndex);
+        if (SceneManager.GetSceneByBuildIndex(nextSceneIndex) != null)
+        {
+            Debug.Log("Next scene");
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No Scene");
+        }
     }
 
 }
