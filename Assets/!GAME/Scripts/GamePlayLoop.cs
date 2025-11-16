@@ -46,6 +46,7 @@ public class GamePlayLoop : MonoBehaviour
     private EventInstance NewsMan_8;
     private EventInstance KajiuSound;
     private EventInstance Cityamb;
+    private EventInstance Mayor;
 
     [SerializeField] private EventReference NewsMan_1Event;
     [SerializeField] private EventReference NewsMan_2Event;
@@ -193,7 +194,8 @@ public class GamePlayLoop : MonoBehaviour
         yield return new WaitForSeconds(TalkBeforeMayor);
 
         Audiomanmove.instance.PauseSound(Cityamb, true);
-        Audiomanager.instance.PlaySound(MayorTalkEvent, transform.position);
+        //RERERERERERERERERERERERERERERRERERERERERERERERERERERERERERRERERERERERERERERERERERERERERRERERERERERERERERERERERERERERRERERERERERERERERERERERERERER
+        Mayor = Audiomanager.instance.PlaySound(MayorTalkEvent, transform.position);
         birdSpawner.SetActive(true);
         mayorObject.SetActive(true);
         
@@ -224,6 +226,7 @@ public class GamePlayLoop : MonoBehaviour
 
         yield return new WaitForSeconds(EndingDelay);
         TransitionController.Instance.FadeToEndScene();
+        Audiomanmove.instance.PauseSound(Mayor, true);
 
     }
 
