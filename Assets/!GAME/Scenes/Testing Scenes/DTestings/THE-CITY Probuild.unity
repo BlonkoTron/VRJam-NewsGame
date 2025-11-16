@@ -88192,7 +88192,51 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8567845152393725549, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 638794354}
+    - targetCorrespondingSourceObject: {fileID: 4478776012583882579, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1920982150843076020}
+    - targetCorrespondingSourceObject: {fileID: 4478776012583882579, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1920982150843076019}
   m_SourcePrefab: {fileID: 100100000, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
+--- !u!1 &1920982150843076018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4478776012583882579, guid: 88ad9a0bab473e44d8866645a9b809f7, type: 3}
+  m_PrefabInstance: {fileID: 1920982150843076017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1920982150843076019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920982150843076018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddfa53eae2f3534198bdf688fe44df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mobangrier:
+    Guid:
+      Data1: 2125700011
+      Data2: 1232927959
+      Data3: -677233996
+      Data4: 806579112
+    Path: event:/Angrymob/Angrymob
+  minTime: 20
+  maxTime: 40
+--- !u!114 &1920982150843076020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920982150843076018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94c6e76f57941a439fc7354ba5c0227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2943156957964514842
 PrefabInstance:
   m_ObjectHideFlags: 0
