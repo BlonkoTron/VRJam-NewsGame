@@ -1113,7 +1113,7 @@ PrefabInstance:
     - target: {fileID: 621051872942622411, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: 'attackWaypoints.Array.data[3]'
       value: 
-      objectReference: {fileID: 159549216}
+      objectReference: {fileID: 1140566193}
     - target: {fileID: 666047172202175796, guid: dab3c2a111659cb4e9c3e6d0795c4850, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.83
@@ -3467,11 +3467,6 @@ GameObject:
 --- !u!95 &159549215 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5428393186441638343, guid: 1bbcb938489eb9747977c169fcad05d0, type: 3}
-  m_PrefabInstance: {fileID: 1140566192}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &159549216 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9047544818124812549, guid: 1bbcb938489eb9747977c169fcad05d0, type: 3}
   m_PrefabInstance: {fileID: 1140566192}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &159549217
@@ -52688,6 +52683,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 159549217}
   m_SourcePrefab: {fileID: 100100000, guid: 1bbcb938489eb9747977c169fcad05d0, type: 3}
+--- !u!4 &1140566193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4782099095500628511, guid: 1bbcb938489eb9747977c169fcad05d0, type: 3}
+  m_PrefabInstance: {fileID: 1140566192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1169691124
 PrefabInstance:
   m_ObjectHideFlags: 0
