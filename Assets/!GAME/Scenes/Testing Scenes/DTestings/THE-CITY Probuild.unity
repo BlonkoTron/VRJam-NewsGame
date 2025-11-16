@@ -88223,8 +88223,8 @@ MonoBehaviour:
       Data3: -677233996
       Data4: 806579112
     Path: event:/Angrymob/Angrymob
-  minTime: 20
-  maxTime: 40
+  minTime: 10
+  maxTime: 25
 --- !u!114 &1920982150843076020
 MonoBehaviour:
   m_ObjectHideFlags: 0
