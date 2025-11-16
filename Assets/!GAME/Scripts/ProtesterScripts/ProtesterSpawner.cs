@@ -15,6 +15,9 @@ public class ProtesterSpawner : MonoBehaviour
 
     private bool isSpawning = false;
 
+    private int spawnCount = 0;
+    [SerializeField] private int spawnCountBeforeStop = 5;
+
     private void Awake()
     {
         isSpawning = false;
@@ -44,6 +47,11 @@ public class ProtesterSpawner : MonoBehaviour
         if (protesterAttackerPrefab != null)
         {
             Instantiate(protesterAttackerPrefab, transform.position, transform.rotation);
+            spawnCount++;
+        }
+        if (spawnCount >= spawnCountBeforeStop)
+        {
+            isSpawning = false;
         }
     }
 
