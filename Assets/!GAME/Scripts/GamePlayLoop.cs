@@ -38,12 +38,14 @@ public class GamePlayLoop : MonoBehaviour
     private EventInstance NewsMan_5;
     private EventInstance NewsMan_6;
     private EventInstance NewsMan_7;
+    private EventInstance KajiuSound;
 
     [SerializeField] private EventReference NewsMan_1Event;
     [SerializeField] private EventReference NewsMan_2Event;
     [SerializeField] private EventReference NewsMan_3Event;
     [SerializeField] private EventReference PointsSoundEvent;
     [SerializeField] private EventReference MayorTalkEvent;
+    [SerializeField] private EventReference KajiuSoundEvent;
 
     [SerializeField] private EventReference NewsMan_4Event;
     [SerializeField] private EventReference NewsMan_5Event;
@@ -196,6 +198,7 @@ public class GamePlayLoop : MonoBehaviour
         yield return new WaitForSeconds(thirdTimerDuration);
         Kajiu();
         NewsMan_6 = Audiomanager.instance.PlaySound(NewsMan_6Event, transform.position);
+        KajiuSound = Audiomanager.instance.PlaySound(KajiuSoundEvent, transform.position);
 
         yield return new WaitForSeconds(TakenByBird);
         NewsMan_7 = Audiomanager.instance.PlaySound(NewsMan_7Event, transform.position);
