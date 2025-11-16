@@ -30,6 +30,7 @@ public class GamePlayLoop : MonoBehaviour
 
     public GameObject birdSpawner;
 
+    public GameObject mayorObject;
 
     private EventInstance NewsMan_1;
     private EventInstance NewsMan_2;
@@ -180,6 +181,7 @@ public class GamePlayLoop : MonoBehaviour
         yield return new WaitForSeconds(TalkBeforeMayor);
         Audiomanager.instance.PlaySound(MayorTalkEvent, transform.position);
         birdSpawner.SetActive(true);
+        mayorObject.SetActive(true);
         
 
         yield return new WaitForSeconds(animationDuration);
